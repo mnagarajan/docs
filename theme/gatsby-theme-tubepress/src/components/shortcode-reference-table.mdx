@@ -1,0 +1,15 @@
+import { Table } from 'semantic-ui-react';
+
+export default (props) => <Table celled>
+  <Table.Body>
+    {(
+      props.data.map((row) => <Table.Row>
+        {(
+          row.map((cell) => <Table.Cell>
+            {cell}
+          </Table.Cell>))
+        }
+      </Table.Row>)
+    )}
+  </Table.Body>
+</Table>;

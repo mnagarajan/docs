@@ -1,0 +1,24 @@
+---
+title: Cache
+description: 'Make sure your site loads as quickly as possible'
+---
+
+This page identifies several best practices to ensure that TubePress runs as fast as possible and has a minimal performance overhead on your site.
+
+## Tweak Your Cache Settings
+TubePress uses several caches to speed up your site. What's a cache? [Wikipedia has a great definition](https://en.wikipedia.org/wiki/Cache_%28computing%29):
+
+&gt;In computing, a cache is a component that stores data so future requests for that data can be served faster; the data stored in a cache might be the results of an earlier computation, or the duplicates of data stored elsewhere. A cache hit occurs when the requested data can be found in a cache, while a cache miss occurs when it cannot. Cache hits are served by reading data from the cache, which is faster than recomputing a result or reading from a slower data store; thus, the more requests can be served from the cache, the faster the system performs.
+
+TubePress offers you several cache settings at `WP Admin &gt; Settings &gt; TubePress &gt; Cache`.
+
+ ![TubePress cache settings](http://support.tubepress.com/customer/portal/attachments/468161)
+ 
+
+There are two caches that you can configure. At the top of the page are settings for the API cache, which TubePress uses to cache network operations (e.g. conversations with YouTube and Vimeo). The bottom of the page lets you control the HTML cache, which is a very high level cache and can dramatically improve performance.
+
+**At a bare minimum, ensure that both caches are enabled**. This alone will improve TubePress's performance by at least a factor of ten. We then recommend that you set each cache's lifetime to the highest possible value that you can tolerate. Higher lifetimes lead to faster TubePress performance, but you run the risk of TubePress displaying stale data to your users. If your videos don't change that often, set a very high lifetime (on the order of days).
+
+## Use a WordPress Caching Plugin
+If you run a WordPress website that's exposed to the public, you should be using a caching plugin. There are no exceptions! [Elegant Themes](https://www.elegantthemes.com/) has a [great blog post](https://www.elegantthemes.com/blog/resources/the-best-wordpress-cache-plugins-and-how-to-use-them) listing the best caching plugins and how to use them.
+

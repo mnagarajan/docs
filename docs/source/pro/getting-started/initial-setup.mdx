@@ -1,0 +1,133 @@
+---
+title: Initial Setup
+description: 'One-time post-install tasks for TubePress Pro'
+---
+
+You've [downloaded](/docs/page/download) and [installed](/docs/page/installation) TubePress to your website - great! If this is your first time using TubePress, you'll need to perform some initial configuration before you go further. These are one-time jobs that should take just a few minutes.
+
+## Navigate to the TubePress options page
+
+First, you'll want to find the TubePress options page within your WordPress admin dashboard. This page is located at `WP Admin > Settings > TubePress`. Go ahead and navigate there now before moving on.
+
+![WP Admin TubePress options page](http://support.tubepress.com/customer/portal/attachments/465226)
+
+## About Provider APIs
+
+TubePress needs to regularly communicate with video providers (YouTube, Vimeo, etc.) on your behalf. To sort out all the incoming requests, and for quota purposes, these providers **mandate** that everyone supplies "API credentials" with each message. It's the rough equivalent of showing someone an ID card before you have a conversation.
+
+Setting up your API credentials is easy, free, and should take less than 5 minutes per provider. You only need to complete this step for providers that you actually use. (In other words, if you aren't using Vimeo, you can safely skip the Vimeo API setup.)
+
+## YouTube API Setup
+
+1. You'll need a Google account. If you don't have one, you can [sign up for one for free](https://accounts.google.com/signup).
+
+1. Visit the [Google Developers Console](https://console.developers.google.com/)
+
+1. Once you sign in, select "Create a project..." from the "Select a project" menu near the top of the page.
+
+    ![Create new API project button](../img/initial-setup/api-setup-google/01-create-project-button.png)
+
+1. Enter anything you'd like for the Project name, then click the "Create" button.
+
+    ![Create project form](../img/initial-setup/api-setup-google/02-new-project-dialog.png)
+
+1. After the project is created (it will take a few seconds), you should be on the "Overview" page for your new project. Double-check to make sure that your new project name is visible from the menu at the top of the page. 
+
+    ![Project overview](../img/initial-setup/api-setup-google/03-project-overview.png)
+
+1. Under the "Google APIs" tab, click the link for "YouTube Data API".
+
+    ![YouTube API link](../img/initial-setup/api-setup-google/04-yt-data-api-location.png)
+
+1. Click the "Enable" button.
+
+    ![Enable API button](../img/initial-setup/api-setup-google/05-enable-api-button1.png)
+
+1. After the API is enabled (it will take a few seconds), click the "Credentials" link on the left side of the page.
+
+    ![Credentials link](../img/initial-setup/api-setup-google/06-credentials-link-location.png)
+
+1. Click the blue "Create credentials" button.
+
+    ![Create credentials button](../img/initial-setup/api-setup-google/07-add-credentials-button.png)
+    
+1. In the dropdown that appears, click the link for "API key".
+
+    ![API key link](../img/initial-setup/api-setup-google/08-api-key-link-location.png)
+
+1. Click the "Server key" button. 
+
+    ![Server key button](img/api-setup-google/09-server-key-button.png)
+ 
+1. Click the "Create" button. You can fill in the "Name" field if you'd like, but leave the other field empty. 
+
+    ![Create server key button](img/api-setup-google/10-create-server-key.png)
+
+1. Copy your new API key.
+
+    ![Copy API key](../img/initial-setup/api-setup-google/11-copy-new-api-key.png)
+    
+1. On the TubePress options page, click the "Feed" tab.
+
+1. Enter your API key into the text field for "Google API Key", as shown below.
+
+    ![Enter Google API key](../img/initial-setup/api-setup-google/12-enter-google-api-key.png)
+    
+1. Click "Save" to save your settings. That's it!
+
+## Vimeo API Setup
+
+1.  You'll need a Vimeo account. If you don't have one, you can [sign up for one for free](https://vimeo.com/join).  
+     
+1.  In the "Feed" tab of the TubePress options page, scroll down to the Vimeo area. Click the link that says "Click here to create a new Vimeo app". This will open a new tab in your web browser on vimeo.com.  
+
+    ![Create new Vimeo app](../img/initial-setup/api-setup-vimeo/01-click-here.png)   
+     
+1.  In the new web browser tab, you'll see a form from Vimeo.
+
+    ![Vimeo app registration](../img/initial-setup/api-setup-vimeo/new-vimeo-app.png)   
+     
+    * Enter anything you'd like for the App Name, App Description, and App URL.  
+         
+    * **Important.** For the "App Callback URLs" field, you will need to enter the exact value shown to you back on the TubePress options page. We recommend copying it to your clipboard and pasting it into the Vimeo form.  
+    
+    ![App Callback URLs location](../img/initial-setup/api-setup-vimeo/02-callback-url.png)   
+         
+    * Check the box to accept Vimeo's license and terms, then click the "Create app" button.
+      
+    Here's an example of a form that's been properly filled out.
+    
+    ![Properly filled-out form](../img/initial-setup/api-setup-vimeo/new-app-screen.png)   
+     
+1.  After your new Vimeo app has been created, click the "Authentication" tab. You'll see your app's "Client Identifier" and "Client Secrets"
+  
+    ![Client identifier and client secrets](../img/initial-setup/api-setup-vimeo/authentication-tab.png)   
+           
+    !!! note
+        The "Authentication" tab may be named "OAuth2"
+    
+1. Enter those two values into the text fields on the TubePress options page.  
+    
+    ![Client ID and secret entry](../img/initial-setup/api-setup-vimeo/03-client-id-and-secret.png)   
+     
+1.  Click the "Save" button to save your settings once. (We are working to eliminate this intermediary step, but for now it's necessary.)  
+
+1.  Click the "New token" button.
+
+    ![New token button](../img/initial-setup/api-setup-vimeo/04-new-token-button.png)   
+    
+    A popup window will briefly open, then close itself.  
+    
+    ![Brief popup window](../img/initial-setup/api-setup-vimeo/05-popup-window.png)   
+    
+    After the popup closes, you should see a success message.  
+    
+    ![Success modal](../img/initial-setup/api-setup-vimeo/06-success-modal.png)   
+    
+    And you should also see a new API token.  
+    
+    ![New token verification](../img/initial-setup/api-setup-vimeo/07-new-token-verification.png)    
+
+1.  Click the Save button to save your settings. You're done!  
+    
+    ![Save button](../img/initial-setup/api-setup-vimeo/08-save-button.png)

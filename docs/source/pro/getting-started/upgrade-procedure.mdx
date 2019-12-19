@@ -1,0 +1,63 @@
+---
+title: Upgrade Procedure
+description: 'Keep your TubePress Pro installation up-to-date'
+---
+
+This page details the upgrade procedure for TubePress Pro.
+
+## Automatic (recommended)
+
+Starting with version 4.2.0, TubePress can update itself via WordPress's plugin update mechanism. This page details the one-time setup procedure that must be completed in order to enable automated updates.
+
+### Notes and Warnings
+
+  * If you are running TubePress 4.1.11 or lower, you must first [manually update TubePress](/docs/page/manual-upgrade-procedure) to 4.2.0 or higher before following these instructions.
+  
+  * In order to prevent abuse of [our license](https://tubepress.com/license/), we log all automatic updates that happen through this procedure. We will log your account identifier, the IP address of your WordPress installation, the file downloaded, and the time. If you do not consent to having this activity logged, please do not enable automatic updates. 
+ 
+  * We may disable your account if we find violations of our [Single Site License](https://tubepress.com/license/). We will contact you via email before any action is taken.
+
+### Setup Procedure
+
+1. [Log in to the TubePress Dashboard.](https://dashboard.tubepress.com/profile)
+ 
+2. Under your "Profile" page, you will find your API key. Copy this key to your clipboard. 
+
+  ![Get TubePress API key](https://d20zf3qr0tri5h.cloudfront.net/support.tubepress.com/img/articles/wordpress/automatic-updates/01-get-api-key.png)
+ 
+3. Under your TubePress options page, head to the "Advanced" tab. Paste your API key into the field for "tubepress.com API key." 
+  
+  ![Paste API key](https://d20zf3qr0tri5h.cloudfront.net/support.tubepress.com/img/articles/wordpress/automatic-updates/02-enter-api-key.png)
+ 
+4. Save your settings by clicking the blue "Save" button. 
+ 
+TubePress can now update itself via WordPress, so you may manage updates as you do with any other WordPress plugin.
+
+## Manual
+
+This page details the **manual** procedure to upgrade TubePress from one version to another.
+
+!!! Note
+    Since TubePress 4.2.0, [automated updates](/docs/page/enable-automatic-plugin-updates) are available. We strongly suggest that you use automated updates to save time and frustration. If you are upgrading from a version of TubePress previous to 4.2.0, you'll need to follow the manual procedure described below.
+
+1. [Download TubePress](/docs/page/download) as a zip file to your desktop.
+ 
+1. Unzip the file.
+ 
+1. With your FTP program, upload the unzipped folder to the `wp-content/plugins` folder in your WordPress directory on your web server. If you would prefer to not use FTP, you may use the "alternative" installation technique described in the [installation documentation](/docs/page/installation).
+ 
+1. Go to WP Admin &gt; Plugins and find TubePress in your plugin list. Ensure that you are viewing "All" plugins.
+
+    ![WordPress all plugins](img/upgrade-manual/all-plugins.png)
+ 
+1. You should see two side-by-side copies of TubePress. The old version should still be active and the version you just uploaded should be inactive.
+
+    ![Old version of TubePress activated](img/upgrade-manual/both-plugins.png)
+ 
+1. If you performed any of the optional installations (Shadowbox.js or JW Player), [repeat those installations](/docs/page/installation) to your new version of TubePress.
+ 
+1. **Deactivate** the old version of TubePress.
+ 
+1. **Activate** the new version of TubePress.
+ 
+1. Once you have confirmed that the new version of TubePress is working properly, you may delete the old version.

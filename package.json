@@ -1,0 +1,10 @@
+{
+  "private": true,
+  "workspaces": [
+    "docs",
+    "theme/gatsby-theme-tubepress"
+  ],
+  "eslintConfig": {
+    "extends": "@tubepress/eslint-config"
+  }
+}

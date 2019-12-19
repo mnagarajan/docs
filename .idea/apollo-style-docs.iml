@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module type="WEB_MODULE" version="4">
+  <component name="NewModuleRootManager">
+    <content url="file://$MODULE_DIR$">
+      <excludeFolder url="file://$MODULE_DIR$/docs/.cache" />
+      <excludeFolder url="file://$MODULE_DIR$/docs/jimdo/.cache" />
+      <excludeFolder url="file://$MODULE_DIR$/docs/jimdo/public" />
+      <excludeFolder url="file://$MODULE_DIR$/docs/pro/.cache" />
+      <excludeFolder url="file://$MODULE_DIR$/docs/pro/public" />
+      <excludeFolder url="file://$MODULE_DIR$/docs/public" />
+      <excludeFolder url="file://$MODULE_DIR$/docs/weebly/.cache" />
+      <excludeFolder url="file://$MODULE_DIR$/docs/weebly/public" />
+      <excludeFolder url="file://$MODULE_DIR$/docs/welcome/.cache" />
+      <excludeFolder url="file://$MODULE_DIR$/docs/welcome/public" />
+      <excludeFolder url="file://$MODULE_DIR$/docs/wix/.cache" />
+      <excludeFolder url="file://$MODULE_DIR$/docs/wix/public" />
+      <excludeFolder url="file://$MODULE_DIR$/src/jimdo/.cache" />
+      <excludeFolder url="file://$MODULE_DIR$/src/jimdo/public" />
+      <excludeFolder url="file://$MODULE_DIR$/src/main/.cache" />
+      <excludeFolder url="file://$MODULE_DIR$/src/main/public" />
+    </content>
+    <orderEntry type="inheritedJdk" />
+    <orderEntry type="sourceFolder" forTests="false" />
+  </component>
+</module>

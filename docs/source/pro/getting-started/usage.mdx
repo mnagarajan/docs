@@ -1,0 +1,101 @@
+---
+title: Usage
+description: 'Add TubePress to your WordPress posts and pages'
+---
+
+## Shortcodes
+
+TubePress can be inserted into any WordPress post or page via [shortcodes](https://codex.wordpress.org/Shortcode), which are small snippets of text surrounded by two brackets. For instance, the following is TubePress's default shortcode:
+
+```[tubepress]```
+
+If you type that shortcode into any post or page on your website, TubePress will replace it with a video gallery. You may use shortcodes an unlimited number of times, anywhere on your site.
+
+### Different Content on Different Pages
+
+If you just type the "empty" shortcode `[tubepress]` in a post or a page, the settings you entered into the TubePress options page (`WP Admin > Settings > TubePress`) will be used. **The real power of the plugin lies in the ability to be configured differently on multiple posts and pages**. This is done by [passing options to the `[tubepress]` shortcode](all options link). For any options not explicitly set in the shortcode, TubePress will revert to your settings saved at `WP Admin > Settings > TubePress`.
+
+### Examples
+
+Say on one page you want to display a gallery of YouTube videos that are tagged with "football", want 15 videos per page, and want to play the videos in an HTML popup window. On this page, wherever you want the gallery to be displayed, you would type:
+
+`[tubepress mode="tag" tagValue="football" playerLocation="popup" resultsPerPage="15"]`
+
+And say on another page you want to display a Vimeo gallery of the `staffpicks` channel, 4 results per page, and videos to be played with Shadowbox.js. On this page you would type:
+
+`[tubepress mode="vimeoChannel" vimeoChannelValue="staffpicks" playerLocation="shadowbox" resultsPerPage="4"]`
+
+You may follow this procedure for unlimited galleries on unlimited posts/pages. Just use [any TubePress option](all options link) to control TubePress, and be sure to [check out this article for tips on using shortcodes](/docs/page/tips-on-editing-tubepress-shortcodes-in-wordpress).
+
+### Tips for writing shortcodes
+
+When you add or edit a post or a page, WordPress lets you compose with the [Visual Editor](https://en.support.wordpress.com/visual-editor/), which is a semi-WYSIWYG editor that is often convenient when writing text.
+
+However, when adding or editing a TubePress shortcode to a post or page, the Visual Editor can be your worst enemy. In a noble effort to make your prose shine, the Visual Editor often inserts "fancy" characters (such as `"`, `"`, `˝`, etc.) and HTML tags such as `<pre>` or `<code>`. These characters and tags can have a distastrous effect on TubePress's ability to configure itself and display your videos.
+
+**The solution is to switch to WordPress's Text Editor when adding or editing shortcodes**. This is really easy to do and we explain the process below.
+
+**Step 1: Switch to the Text Editor**
+
+At the top right of your post, you'll see "Visual" and "Text." Click "Text" to switch to the Text Editor.
+
+![Switch to WordPress Text Editor](http://support.tubepress.com/customer/portal/attachments/468115)
+ 
+
+You should then see your post, just with the "plumbing" of what's underneath.
+
+![WordPress Text Editor](http://support.tubepress.com/customer/portal/attachments/468116)
+ 
+**Step 2: Remove Any Surrounding HTML Tags**
+
+Ensure that wherever you have a TubePress shortcode in your post or page, there are no surrounding HTML tags such as `<pre>` or `<code>`. If you *do* find such tags, delete both the opening and closing tags.
+
+![Delete HTML tags](http://support.tubepress.com/customer/portal/attachments/468117)
+ 
+
+**Step 3: Ensure Absence of "Fancy" Quotes**
+
+Check the quotes (single or double) in your shortcode and ensure that they are "plain" quotes. The safest way to do this is to simply delete any suspect quote and type it in again directly (while using the Text Editor).
+
+![Delete fancy quotes](http://support.tubepress.com/customer/portal/attachments/468118)
+ 
+
+![Plain quotes](http://support.tubepress.com/customer/portal/attachments/468119)
+ 
+
+## WordPress templates
+
+!!! info "Note"
+    A basic understanding of PHP is very helpful when using this feature.
+
+It's very easy to use TubePress in any WordPress template. Below we have [the world's simplest WordPress template](http://codex.wordpress.org/The_Loop_in_Action#The_World.27s_Simplest_Index_Page) with TubePress added:
+
+```php
+<?php
+  include WP_PLUGIN_DIR . '/tubepress_pro_x_y_z/src/TubePressPro.php'; // highlight-line
+
+  get_header();
+
+  print TubePressPro::getHTML('mode="tag" tagValue="pittsburgh steelers"'); // highlight-line
+
+  if (have_posts()) :
+      while (have_posts()) :
+          the_post();
+          the_content();
+      endwhile;
+  endif;
+  get_sidebar();
+  get_footer();
+?>
+```
+
+There are two important lines in the above code. Let's study them in detail:
+
+1. `include WP_PLUGIN_DIR . '/tubepress_pro_x_y_z/src/TubePressPro.php';`
+
+    Include the TubePress Pro library file `TubePressPro.php` anywhere before the template's call to `get_header()`. Note that you will need to replace `tubepress_pro_x_y_z` with the actual version of TubePress that you downloaded (e.g. `tubepress_pro_4_4_8`).
+
+1. `print TubePressPro::getHTML('mode="tag" tagValue="pittsburgh steelers"');`
+
+    The `TubePressPro::getHTML()` static function takes a single string parameter which is any space-separated combination of TubePress options. It returns the HTML output of TubePress as a string. You may repeat this function call as many times as you like, along with any combination of options.
+

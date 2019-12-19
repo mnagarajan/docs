@@ -1,0 +1,23 @@
+---
+title: Single Videos
+description: 'TubePress adds tons of features onto standard video embeds'
+---
+
+Embedding a single video into a website is easy and common. Nearly every video provider includes an "embed" option for each video that provides an HTML `<iframe>` that can be added to any website. If you're reading this, you've probably done this countless times.
+
+TubePress improves the embedding process by
+
+  * Abstracting away the HTML. No need to copy and paste a long and complicated `<iframe>` snippet.
+ 
+  * Allowing you to [control the embedded video player](/docs/page/video-player-options) (e.g. colors, behavior, size, etc.). 
+ 
+  * Bringing in all of the video's [meta information](/docs/page/meta-display-options) (length, description, author, keywords, etc.). You can even have fine-grained control over how the meta information is presented via [TubePress themes](/docs/page/theme-tutorial). 
+ 
+The image below shows what a difference this can make. **On the left is a TubePress-generated single video embed**; on the right is a "plain" embed from YouTube.
+
+ ![Single video embed with TubePress](http://support.tubepress.com/customer/portal/attachments/470514)
+ 
+
+To embed a single video with TubePress, you simply need to give TubePress the ID of the video you'd like to show. TubePress will figure out which video provider (YouTube, Vimeo, etc.) the ID belongs to and will fetch the video. For instance, if you want to embed the YouTube video with ID `J51kfduN5aA`, you would use something like the following:
+
+`[tubepress video="J51kfduN5aA"]`

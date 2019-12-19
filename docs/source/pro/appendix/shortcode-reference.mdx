@@ -1,0 +1,1111 @@
+---
+title: Shortcode Reference
+description: 'The options that can be passed to a TubePress shortcode'
+---
+
+import 'gatsby-theme-tubepress/src/css/no-thead.css';
+
+This page lists all of the options that can be used in a TubePress shortcode.
+
+## Gallery sources
+
+This section lists the options used to control the sources of TubePress video galleries. For each source name listed 
+below, supply it to [`mode`](#mode) to have TubePress fetch videos from the given source.
+
+### General Source Options
+
+#### `mode`
+
+Defines the source of videos for the video gallery that you'd like TubePress to display.
+
+|                                                                                                              |
+|-------------------|------------------------------------------------------------------------------------------|
+| Valid values      | Any of the YouTube, Dailymotion, or Vimeo gallery source names defined on this page      |
+| Default value     | `user`                                                                                   |
+| Example shortcode | `[tubepress mode="user" userValue="3hough"]`                                             |
+
+---
+
+### Dailymotion Sources
+
+#### `dailymotionFavorites`
+
+||
+|---------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| Description         | Configures TubePress to fetch the videos marked as "favorites" by a Dailymotion user. The Dailymotion user is identified by the value you supply to `dailymotionFavoritesValue`. |
+| Dailymotion docs    | [Click here](https://developer.dailymotion.com/api#user-connections)                                                                                                             |
+| Example shortcode   | `[tubepress mode="dailymotionFavorites" dailymotionFavoritesValue="IGN"]`                                                                                                        |
+
+
+#### `dailymotionFeatured`
+
+||
+|---------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| Description         | Configures TubePress to fetch the videos that were both uploaded by a given Dailymotion user *and* featured by Dailymotion. The user is identified by the value you supply to `dailymotionFeaturedValue`. |
+| Dailymotion docs    | [Click here](https://developer.dailymotion.com/api#user-connections)                                                                                                                                      |
+| Example shortcode   | `[tubepress mode="dailymotionFeatured" dailymotionFeaturedValue="IGN"]`                                                                                                                                   |
+
+#### `dailymotionList`
+
+||
+|---------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------|
+| Description         | Configures TubePress to fetch a list of Dailymotion videos. Supply a comma-separated list of Dailymotion video IDs to the `dailymotionListValueoption`.  |
+| Dailymotion docs    | [Click here](https://developer.dailymotion.com/api#video-filters)                                                                                        |
+| Example shortcode   | `[tubepress mode="dailymotionList" dailymotionListValue="x3rx1nb, x2xv8yy"]`                                                                             |
+
+#### `dailymotionPlaylist`
+
+||
+|---------------------|------------------------------------------------------------------------------------------------|
+| Description         | Configures TubePress to fetch videos from a Dailymotion playlist.                 |
+| Dailymotion docs        | [Click here](https://developer.dailymotion.com/api#playlist)      |
+| Example shortcode   | `[tubepress mode="dailymotionPlaylist" dailymotionPlaylistValue="x416ip"]`                     |
+
+#### `dailymotionRelated`
+
+||
+|---------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| Description         | Configures TubePress to fetch Dailymotion videos related to a specific Dailymotion video. The target video is identified by the value supplied to the `dailymotionRelatedValue` option. |
+| Dailymotion docs    | [Click here](https://developer.dailymotion.com/api#video-connections)                                                                                                                   |
+| Example shortcode   | `[tubepress mode="dailymotionRelated" dailymotionRelatedValue="x2xv8yy"]`                                                                                                               |
+
+#### `dailymotionSearch`
+
+||
+|---------------------|--------------------------------------------------------------------------------------------------------------------------------------------|
+| Description         | Configures TubePress to fetch Dailymotion videos matching the given search term. This is just as if you were searching on dailymotion.com. |
+| Dailymotion docs    | [Click here](https://developer.dailymotion.com/api#video-filters)                                                                          |
+| Example shortcode   | `[tubepress mode="dailymotionSearch" dailymotionSearchValue='cats playing piano']`                                                         |
+
+#### `dailymotionSubscriptions`
+
+||
+|---------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| Description         | Configures TubePress to fetch the videos from a given Dailymotion user's subscriptions. The target user is identified by the value you supply to the `dailymotionSubscriptionsValue` option. |
+| Dailymotion docs    | [Click here](https://developer.dailymotion.com/api#user-connections)                                                                                                                         |
+| Example shortcode   | `[tubepress mode="dailymotionSubscriptions" dailymotionSubscriptionsValue="IGN"]`                                                                                                            |
+
+#### `dailymotionTag`
+
+||
+|---------------------|---------------------------------------------------------------------------------------|
+| Description         | Configures TubePress to fetch Dailymotion videos tagged with the given term.          |
+| Dailymotion docs    | [Click here](https://developer.dailymotion.com/api#video-filters)                     |
+| Example shortcode   | `[tubepress mode="dailymotionTag" dailymotionTagValue='olympics']`                    |
+
+#### `dailymotionUser`
+
+||
+|---------------------|----------------------------------------------------------------------------------------|
+| Description         | Configures TubePress to fetch videos uploaded by a given Dailymotion user.             |
+| Dailymotion docs    | [Click here](https://developer.dailymotion.com/api#user-connections)                   |
+| Example shortcode   | `[tubepress mode="dailymotionUser" dailymotionUserValue='RedBull']`                    |
+
+### Vimeo Sources
+
+#### `vimeoAlbum`
+
+||
+|---------------------|----------------------------------------------------------------------------------------------------------------------|
+| Description         | Configures TubePress to fetch videos from a [Vimeo album](https://vimeo.com/help/faq/organizing-your-videos/albums). |
+| Vimeo docs          | [Click here](https://developer.vimeo.com/api/endpoints/me#/albums)                                                   |
+| Example shortcode   | `[tubepress mode="vimeoAlbum" vimeoAlbumValue='3643712']`                                                            |
+
+#### `vimeoAppearsIn`
+
+||
+|---------------------|--------------------------------------------------------------------------------------|
+| Description         | Configures TubePress to fetch videos in which a given Vimeo user appears.            |
+| Vimeo docs          | [Click here](https://developer.vimeo.com/api/endpoints/users#/{user_id}/appearances) |
+| Example shortcode   | `[tubepress mode="vimeoAppearsIn" vimeoAppearsInValue='ehough']`                     |
+
+#### `vimeoCategory`
+
+||
+|---------------------|---------------------------------------------------------------------------------------------|
+| Description         | Configures TubePress to fetch videos from a [Vimeo category](https://vimeo.com/categories). |
+| Vimeo docs          | [Click here](https://developer.vimeo.com/api/endpoints/categories#/{category}/videos)       |
+| Example shortcode   | `[tubepress mode="vimeoCategory" vimeoCategoryValue='Documentary']`                         |
+
+#### `vimeoChannel`
+
+||
+|---------------------|--------------------------------------------------------------------------------------------------------------------------|
+| Description         | Configures TubePress to fetch videos from a [Vimeo Channel](https://vimeo.com/help/faq/organizing-your-videos/channels). |
+| Vimeo docs          | [Click here](https://developer.vimeo.com/api/endpoints/channels#/{channel_id}/videos)                                    |
+| Example shortcode   | `[tubepress mode="vimeoChannel" vimeoChannelValue='staffpicks']`                                                         |
+
+#### `vimeoGroup`
+
+||
+|---------------------|----------------------------------------------------------------------------------------------------------------------|
+| Description         | Configures TubePress to fetch videos from a [Vimeo Group](https://vimeo.com/help/faq/organizing-your-videos/groups). |
+| Vimeo docs          | [Click here](https://developer.vimeo.com/api/endpoints/groups#/{group_id}/videos)                                    |
+| Example shortcode   | `[tubepress mode="vimeoGroup" vimeoGroupValue='travelhd']`                                                           |
+
+#### `vimeoLikes`
+
+||
+|---------------------|------------------------------------------------------------------------------------------------------------------------------------|
+| Description         | Configures TubePress to fetch videos [liked by a given Vimeo user](https://vimeo.com/help/faq/watching-videos/likes-and-comments). |
+| Vimeo docs          | [Click here](https://developer.vimeo.com/api/endpoints/users#/{user_id}/likes)                                                     |
+| Example shortcode   | `[tubepress mode="vimeoLikes" vimeoLikesValue='ehough']`                                                                           |
+
+#### `vimeoSearch`
+
+||
+|---------------------|--------------------------------------------------------------------------------------------------------------------------------|
+| Description         | Configures TubePress to fetch Vimeo videos matching the given search term. This is just as if you were searching on vimeo.com. |
+| Vimeo docs          | [Click here](https://developer.vimeo.com/api/endpoints/videos)                                                                 |
+| Example shortcode   | `[tubepress mode="vimeoSearch" vimeoSearchValue='cats playing piano']`                                                         |
+
+#### `vimeoTag`
+
+||
+|---------------------|-----------------------------------------------------------------------------------------------------------------------------------------------|
+| Description         | Configures TubePress to fetch Vimeo videos [tagged with the given term](https://vimeo.com/help/faq/managing-your-videos/categories-and-tags). |
+| Vimeo docs          | [Click here](https://developer.vimeo.com/api/endpoints/tags#/{word}/videos)                                                                   |
+| Example shortcode   | `[tubepress mode="vimeoTag" vimeoTagValue='soccer']`                                                                                          |
+
+#### `vimeoUploadedBy`
+
+||
+|---------------------|---------------------------------------------------------------------------------------|
+| Description         | Configures TubePress to fetch videos uploaded by a given user.                        |
+| Vimeo docs          | [Click here](https://developer.vimeo.com/api/endpoints/users#/{user_id}/videos)       |
+| Example shortcode   | `[tubepress mode="vimeoUploadedBy" vimeoUploadedByValue='ehough']`                    |
+
+### YouTube Sources
+
+#### `favorites`
+
+||
+|---------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| Description         | Configures TubePress to fetch the videos marked as "favorites" by a YouTube user or channel. The YouTube user or channel is identified by the value you supply to `favoritesValue`. |
+| YouTube docs        | [Click here](https://developers.google.com/youtube/v3/docs/playlistItems/list)                                                                                                      |
+| Note                | The user/channel's favorites playlist must be set to "public" visibility.                                                                                                           |
+| Example shortcode   | `[tubepress mode="favorites" favoritesValue="3hough"]`                                                                                                                              |
+
+#### `playlist`
+
+||
+|---------------------|------------------------------------------------------------------------------------|
+| Description         | Configures TubePress to fetch videos from a YouTube playlist.                      |
+| YouTube docs        | [Click here](https://developers.google.com/youtube/v3/docs/playlistItems/list)     |
+| Note                | Currently, only public playlists can be shown with TubePress.                      |
+| Example shortcode   | `[tubepress mode="playlist" playlistValue="6813408AE8D50E6F"]`                     |
+
+#### `tag`
+
+||
+|---------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| Description         | Configures TubePress to fetch YouTube videos matching a search term. Supply space-separated search terms to the `tagValue` option. To search for an exact phrase, enclose the phrase in double quotes. Use the pipe character (`|`) to indicate a boolean OR, and the minus character (`-`) to exclude a term. |
+| YouTube docs        | [Click here](https://developers.google.com/youtube/v3/docs/search/list)                                                                                                                                                                                                                                        |
+| Example shortcode   | `[tubepress mode="tag" tagValue='"pittsburgh steelers" highlights -playoffs']`                                                                                                                                                                                                                                 |
+
+#### `user`
+
+||
+|---------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| Description         | Configures TubePress to fetch YouTube videos uploaded by a YouTube user or channel. The YouTube channel or user is defined by the value you supply to the `userValue` option. |
+| YouTube docs        | [Click here](https://developers.google.com/youtube/v3/docs/playlistItems/list)                                                                                                |
+| Example shortcode   | `[tubepress mode="user" userValue="3hough"]`                                                                                                                                  |
+
+#### `youtubeList`
+
+||
+|---------------------|----------------------------------------------------------------------------------------------------------------------------------------------|
+| Description         | Configures TubePress to fetch a list of YouTube videos. Supply a comma-separated list of YouTube video IDs to the `youtubeListValue` option. |
+| YouTube docs        | [Click here](https://developers.google.com/youtube/v3/docs/videos/list)                                                                      |
+| Example shortcode   | `[tubepress mode="youtubeList" youtubeListValue="X9ZoKKQsxis, MD5bFCDfySc"]`                                                                 |
+
+#### `youtubeRelated`
+
+||
+|---------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| Description         | Configures TubePress to fetch YouTube videos related to a specific YouTube video. The target YouTube video is identified by the value supplied to the `youtubeRelatedValue` option. |
+| YouTube docs        | [Click here](https://developers.google.com/youtube/v3/docs/videos/list)                                                                                                             |
+| Example shortcode   | `[tubepress mode="youtubeRelated" youtubeRelatedValue="ZTUVgYoeN_b"]`   
+
+## Thumbnails
+
+This section lists all of the TubePress options that apply to video thumbnails.
+
+### General thumbnail options
+
+The options below apply to all video providers (YouTube, Vimeo, Dailymotion, etc.).
+
+#### `ajaxPagination`
+
+||
+|-------------------|------------------------------------------------------------------------------------------------------------------------------------------------------|
+| Description       | Use Ajax to paginate (clicking on "Next", etc.) through galleries. This avoids a full page reload and is usually a better experience for your users. |
+| Default value     | `false`                                                                                                                                              |
+| Valid values      | `true` or `false`                                                                                                                                    |
+| Example shortcode | `[tubepress ajaxPagination="false"]`                                                                                                                 |
+
+#### `enableQuickplay`
+
+||
+|-------------------|-----------------------------------------------------------------------------------------------|
+| Description       | Replaces video thumbnail images with fully-functional embedded video players.                 |
+| Default value     | `true`                                                                                        |
+| Valid values      | `true` or `false`                                                                             |
+| Note              | This is only available with the [QuickPlay Add-On](/docs/page/add-on-quickplay) for TubePress |
+| Example shortcode | `[tubepress enableQuickplay="false"]`                                                         |
+
+#### `flexibleThumbnailRows`
+
+||
+|-------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| Description       | Automatically adjust the height of thumbnail rows in TubePress galleries, ensuring that the metadata (runtime, title, description, etc.) for each video is completely visible. |
+| Default value     | `true`                                                                                                                                                                         |
+| Valid values      | `true` or `false`                                                                                                                                                              |
+| Note              | This is only available with the [Flexible Thumbnail Rows Add-On](/docs/page/add-on-flexible-thumbnail-rows) for TubePress                                                      |
+| Example shortcode | `[tubepress flexibleThumbnailRows="false"]`                                                                                                                                    |
+
+#### `fluidThumbs`
+
+||
+|-------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| Description       | Dynamically adjust the width of thumbnail columns to best fit their container. This generally improves the appearance of the thumbnail gallery, but can cause problems in complex site layouts. |
+| Default value     | `true`                                                                                                                                                                                          |
+| Valid values      | `true` or `false`                                                                                                                                                                               |
+| Example shortcode | `[tubepress fluidThumbs="false"]`                                                                                                                                                               |
+
+#### `hqThumbs`
+
+||
+|-------------------|-------------------------------------------------------------------------------------------------------------------|
+| Description       | Use highest-quality thumbnails. This allows thumbnail sizes greater than 120px x 90px without causing distortion. |
+| Default value     | `false`                                                                                                           |
+| Valid values      | `true` or `false`                                                                                                 |
+| Example shortcode | `[tubepress hqThumbs="true"]`                                                                                     |
+
+#### `paginationAbove`
+
+||
+|-------------------|---------------------------------------------------------------------------|
+| Description       | Show pagination links ("Next", "Prev", etc.) above the thumbnail gallery. |
+| Default value     | `false`                                                                   |
+| Valid values      | `true` or `false`                                                         |
+| Example shortcode | `[tubepress paginationAbove="true"]`                                      |
+
+#### `paginationBelow`
+
+||
+|-------------------|---------------------------------------------------------------------------|
+| Description       | Show pagination links ("Next", "Prev", etc.) below the thumbnail gallery. |
+| Default value     | `false`                                                                   |
+| Valid values      | `true` or `false`                                                         |
+| Example shortcode | `[tubepress paginationBelow="true"]`                                      |
+
+#### `resultsPerPage`
+
+||
+|-------------------|------------------------------------------------------------------------------------|
+| Description       | Defines how many videos from a video source should be on each page of the gallery. |
+| Default value     | `30`                                                                               |
+| Valid values      | Any integer between 1 and 50 (inclusive)                                           |
+| Example shortcode | `[tubepress resultsPerPage="30"]`                                                  |
+
+#### `thumbHeight`
+
+||
+|-------------------|-----------------------------------------------------|
+| Description       | The desired height (in pixels) of video thumbnails. |
+| Default value     | `90`                                                |
+| Valid values      | Any positive integer                                |
+| Example shortcode | `[tubepress thumbHeight="30"]`                      |
+
+#### `thumbWidth`
+
+||
+|-------------------|----------------------------------------------------|
+| Description       | The desired width (in pixels) of video thumbnails. |
+| Default value     | `90`                                               |
+| Valid values      | Any positive integer                               |
+| Example shortcode | `[tubepress thumbWidth="30"]`                      |
+
+### Dailymotion
+
+The options below apply only to Dailymotion.
+
+#### `dailymotionThumbnailPreferredSize`
+
+||
+|-------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| Description       | Select the desired height (in pixels) of the thumbnails served from Dailymotion. Higher resolutions will generally look better but will negatively impact your site's load time. For best results, choose the value closest to (but not less than) your actual thumbnail height. |
+| Default value     | `original`                                                                                                                                                                                                                                                                       |
+| Valid values      |   `max`, `720px`, `480px`, `360px`, `240px`,  `180px`, `120px`, or `60px`                                                                                                                                                                                     |
+| Example shortcode | `[tubepress dailymotionThumbnailPreferredSize="720px"]`                                                                                                                                                                                                                          |
+#### `dailymotionThumbnailRatio`
+
+||
+|-------------------|--------------------------------------------------------------------------|
+| Description       | Select the desired aspect ratio of the Dailymotion thumbnails.           |
+| Default value     | `original`                                                               |
+| Valid values      | `original`, `widescreen`, or `square`                                    |
+| Example shortcode | `[tubepress dailymotionThumbnailRatio="widescreen"]`                     |
+
+### YouTube
+
+The options below apply only to YouTube.
+
+#### `randomize_thumbnails`
+
+||
+|-------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| Description       | Most YouTube videos come with several thumbnails. By setting this option to `true`, each time a user visits a gallery they will see a randomly-selected thumbnail for each video. This option conflicts with [`hqThumbs`](#hq-thumbs). |
+| Default value     | `false`                                                                                                                                                                                                                  |
+| Valid values      | `true` or `false`                                                                                                                                                                                                        |
+| Example shortcode | `[tubepress randomize_thumbnails="true"]`                                                                                                                                                                                |
+
+#### `youtubeHideBlackBars`
+
+||
+|-------------------|------------------------------------------------------------------------------------------------|
+| Description       | Hides the "black bars" on most YouTube thumbnails.                                             |
+| Default value     | `false`                                                                                        |
+| Valid values      | `true` or `false`                                                                              |
+| Note              | Requires the [YouTube Black Bars Remover Add-On](/docs/page/add-on-youtube-black-bars-remover) |
+| Example shortcode | `[tubepress youtubeHideBlackBars="true"]`                                                      |
+
+## Feed
+
+This section lists all of the TubePress options that apply to the collection of videos from a remote video provider (YouTube, Vimeo, etc.).
+
+### Global
+
+The options below apply to all video providers (Vimeo, Dailymotion, etc.).
+
+#### `orderBy`
+
+||
+|-------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| Description       | Defines the overall sort order of a video feed.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         |
+| Default value     | `default`                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               |
+| Valid values      | <ul><li>`alphabetical` Alphabetical sort based on the video's title (Vimeo only)</li><li>`default` TubePress chooses the "best" sort order for the video source, e.g. search-based galleries are sorted by relevance, and user uploads are sorted by newest</li><li>`likes` Most-liked videos first (Vimeo only)</li><li>`longest` Longest videos first (Vimeo only)</li><li>`newest` Newest videos first</li><li>`oldest` Oldest videos first</li><li>`random` Retrieves videos in a random order (Dailymotion only)</li><li>`ranking` Highest-ranked videos first (Dailymotion only)</li><li>`rating` Highest-rated videos first (YouTube only)</li><li>`relevance` Applies only to search-based galleries or interactive searching. Videos most relevant to the search term will be shown first.</li><li>`reverseAlphabetical` Reverse alphabetical sort based on the video's title</li><li>`shortest` Shortest videos first (Vimeo only)</li><li>`title` Videos will be shown in alphabetical order of their titles (YouTube only)</li><li>`trending` Most-trending videos first (Dailymotion only)</li><li>`viewCount` Videos with the most views will be shown first</li></ul>         |
+| Note              | Not all sort orders can be used with every video source.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                |
+| Example shortcode | `[tubepress orderBy="newest"]`                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          |
+                                                                                                                                                                                                                                                              
+ #### `perPageSort`                                                                                                                                                                                                          
+
+||
+|-------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| Description       | Defines an additional sorting to apply to each individual page of a video gallery.                                                                                                                                                                                                                                                                                                                                                                                                      |
+| Default value     | `none`                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  |
+| Valid values      | <ul><li>`commentCount` Videos with more comments will be shown before others</li><li>`duration` Longest-running videos shown first</li><li>`newest` Newest videos first</li><li>`none` Do nothing</li><li>`oldest` Oldest videos first</li><li>`random` Shuffles videos on the page</li><li>`rating` Highest-rated videos first</li><li>`title` Videos will be shown in alphabetical order of their titles</li><li>`viewCount` Videos with the most views will be shown first</li></ul> |
+| Example shortcode | `[tubepress perPageSort="newest"]`                                                                                                                                                                                                                                                                                                                                                                                                                                                      |
+
+#### `resultCountCap`
+
+||
+|-------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| Description       | Set a maximum limit on the total number of videos in a gallery. This can both limit the number of videos that show up on a page (if `resultsPerPage` > `resultCountCap`), or reduce the number of pagination links for a gallery. Set to `0` to disable any limit. |
+| Default value     | `0`                                                                                                                                                                                                                                                                |
+| Valid values      | Any non-negative integer                                                                                                                                                                                                                                           |
+| Example shortcode | `[tubepress resultCountCap="100"]`                                                                                                                                                                                                                                 |
+
+#### `searchResultsRestrictedToUser`
+
+||
+|-------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| Description       | For keyword-based galleries, or during [interactive searching](/docs/page/interactive-searching), this option can filter the results to videos uploaded by the given user or channel. |
+| Default value     | *empty*                                                                                                                                                                     |
+| Valid values      | Any Vimeo username, a Dailymotion user ID, or a YouTube username or channel ID.                                                                                             |
+| Example shortcode | `[tubepress searchResultsRestrictedToUser="3hough"]`                                                                                                                        |
+
+#### `videoBlacklist`
+
+||
+|-------------------|--------------------------------------------------------------------------------------|
+| Description       | A list of video IDs that should never appear in TubePress's output.                  |
+| Default value     | *empty*                                                                              |
+| Valid values      | A comma-separated list of YouTube, Vimeo, or Dailymotion video IDs.                  |
+| Example shortcode | `[tubepress videoBlacklist="HSrtIrVCm64, BnS-rTbFw2g, 3045633"]`                     |
+
+### Dailymotion
+
+The options below apply only to Dailymotion.
+
+#### `dailymotionCountry`
+
+||
+|-------------------|--------------------------------------------------------------------------------|
+| Description       | Limit to videos declared (by the video owner) to be from the given country.    |
+| Default value     | *empty*                                                                        |
+| Valid values      | Any [two-digit country code](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2) |
+| Dailymotion docs  | [Click here](https://developer.dailymotion.com/api#video-filters)              |
+| Example shortcode | `[tubepress dailymotionCountry="FR"]`                                          |
+
+#### `dailymotionExcludeGenre`
+
+||
+|-------------------|-------------------------------------------------------------------------------|
+| Description       | Exclude videos declared (by the video owner) to be in the given genre.        |
+| Default value     | *empty*                                                                       |
+| Valid values      | Any genre that might exist on Dailymotion. There is no finite list of genres. |
+| Dailymotion docs  | [Click here](https://developer.dailymotion.com/api#video-filters)             |
+| Example shortcode | `[tubepress dailymotionExcludeGenre="sports"]`                                |
+
+#### `dailymotionFamilyFilter`
+
+||
+|-------------------|----------------------------------------------------------------------------------------------------------------------|
+| Description       | Enables or disables Dailymotion's family filter, which attempts to filter out videos with explicit or adult content. |
+| Default value     | `true`                                                                                                               |
+| Valid values      | `true` or `false`                                                                                                    |
+| Dailymotion docs  | [Click here](https://developer.dailymotion.com/api#global-parameters)                                                |
+| Example shortcode | `[tubepress dailymotionFamilyFilter="true"]`                                                                         |
+
+#### `dailymotionFeaturedOnly`
+
+||
+|-------------------|-------------------------------------------------------------------|
+| Description       | Only include videos featured by Dailymotion.                      |
+| Default value     | `false`                                                           |
+| Valid values      | `true` or `false`                                                 |
+| Dailymotion docs  | [Click here](https://developer.dailymotion.com/api#video-filters) |
+| Example shortcode | `[tubepress dailymotionFeaturedOnly="true"]`                      |
+
+#### `dailymotionGenre`
+
+||
+|-------------------|-------------------------------------------------------------------------------|
+| Description       | Only include videos declared (by the video owner) to be in the given genre.   |
+| Default value     | *empty*                                                                       |
+| Valid values      | Any genre that might exist on Dailymotion. There is no finite list of genres. |
+| Dailymotion docs  | [Click here](https://developer.dailymotion.com/api#video-filters)             |
+| Example shortcode | `[tubepress dailymotionGenre="sports"]`                                       |
+
+#### `dailymotionHdOnly`
+
+||
+|-------------------|------------------------------------------------------------------------------|
+| Description       | Only include videos with vertical resolutions greater than or equal to 720p. |
+| Default value     | `false`                                                                      |
+| Valid values      | `true` or `false`                                                            |
+| Dailymotion docs  | [Click here](https://developer.dailymotion.com/api#video-filters)            |
+| Example shortcode | `[tubepress dailymotionHdOnly="true"]`                                       |
+
+#### `dailymotionLanguageDetected`
+
+||
+|-------------------|----------------------------------------------------------------------------------------------------------------------------|
+| Description       | Limit to videos detected (by Dailymotion) to use the given language.                                                       |
+| Default value     | `none`                                                                                                                     |
+| Valid values      | Any of the `code` values found [here](https://api.dailymotion.com/languages), or `none` to include all detected languages. |
+| Dailymotion docs  | [Click here](https://developer.dailymotion.com/api#video-filters)                                                          |
+| Example shortcode | `[tubepress dailymotionLanguageDetected="it"]`                                                                             |
+
+#### `dailymotionLanguagesDeclared`
+
+||
+|-------------------|--------------------------------------------------------------------------------------------------------------|
+| Description       | Limit to videos declared (by the video owner) to be in the specified language(s).                            |
+| Default value     | `none`                                                                                                       |
+| Valid values      | A comma-separated list of [two-digit language codes](https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes). |
+| Dailymotion docs  | [Click here](https://developer.dailymotion.com/api#video-filters)                                            |
+| Example shortcode | `[tubepress dailymotionLanguagesDeclared="ru, be, uk"]`                                                      |
+
+#### `dailymotionLiveFilter`
+
+||
+|-------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| Description       | Only include videos with the given broadcast status.                                                                                                                                                                                                                                                                                       |
+| Default value     | `all`                                                                                                                                                                                                                                                                                                                                      |
+| Valid values      | <ul><li>`all` Include all broadcast statuses</li><li>`onlyLive` Only include live videos</li><li>`onlyLiveOffAir` Only include live videos (off-air)</li><li>`onlyLiveOnAir` Only include live videos (on-air)</li><li>`onlyLiveUpcoming` Only include live videos (upcoming)</li><li>`onlyNonLive` Only include non-live videos</li></ul> |
+| Dailymotion docs  | [Click here](https://developer.dailymotion.com/api#video-filters)                                                                                                                                                                                                                                                                          |
+| Example shortcode | `[tubepress dailymotionLiveFilter="onlyLiveOnAir"]`                                                                                                                                                                                                                                                                                        |
+
+#### `dailymotionLocale`
+
+||
+|-------------------|------------------------------------------------------------------------------|
+| Description       | Sets the desired localization for Dailymotion results.                       |
+| Default value     | `true`                                                                       |
+| Valid values      | Any of the `locale` codes found [here](https://api.dailymotion.com/locales). |
+| Dailymotion docs  | [Click here](https://developer.dailymotion.com/api#global-parameters)        |
+| Example shortcode | `[tubepress dailymotionLocale="ko_KR"]`                                      |
+
+#### `dailymotionOnlyLongerThan`
+
+||
+|-------------------|------------------------------------------------------------------------------------------------------------|
+| Description       | Only include videos longer than or equal to the given number of minutes. Set to `0` to include all videos. |
+| Default value     | `0`                                                                                                        |
+| Valid values      | Any non-negative integer                                                                                   |
+| Dailymotion docs  | [Click here](https://developer.dailymotion.com/api#video-filters)                                          |
+| Example shortcode | `[tubepress dailymotionOnlyLongerThan="10"]`                                                               |
+
+#### `dailymotionOnlySearch`
+
+||
+|-------------------|----------------------------------------------------------------------------------|
+| Description       | Only include videos that match a full-text search for the given term.            |
+| Default value     | *empty*                                                                          |
+| Valid values      | Any string.                                                                      |
+| Dailymotion docs  | [Click here](https://developer.dailymotion.com/api#video-filters)                |
+| Example shortcode | `[tubepress dailymotionOnlySearch="yosemite national park"]`                     |
+
+#### `dailymotionOnlyShorterThan`
+
+||
+|-------------------|-------------------------------------------------------------------------------------------------------------|
+| Description       | Only include videos shorter than or equal to the given number of minutes. Set to `0` to include all videos. |
+| Default value     | `0`                                                                                                         |
+| Valid values      | Any non-negative integer                                                                                    |
+| Dailymotion docs  | [Click here](https://developer.dailymotion.com/api#video-filters)                                           |
+| Example shortcode | `[tubepress dailymotionOnlyShorterThan="10"]`                                                               |
+
+#### `dailymotionOnlyStrongTag`
+
+||
+|-------------------|-----------------------------------------------------------------------|
+| Description       | Only include videos with the given tag (exact match)                  |
+| Default value     | *empty*                                                               |
+| Valid values      | Any string.                                                           |
+| Dailymotion docs  | [Click here](https://developer.dailymotion.com/api#video-filters)     |
+| Example shortcode | `[tubepress dailymotionOnlyStrongTag="yosemite"]`                     |
+
+#### `dailymotionOnlyTags`
+
+||
+|-------------------|------------------------------------------------------------------------------------|
+| Description       | Only include videos with the given tags (full-text search)                         |
+| Default value     | *empty*                                                                            |
+| Valid values      | A comma-separated list of tags.                                                    |
+| Dailymotion docs  | [Click here](https://developer.dailymotion.com/api#video-filters)                  |
+| Example shortcode | `[tubepress dailymotionOnlyTags="yosemite, california, park"]`                     |
+
+#### `dailymotionOnlyOwners`
+
+||
+|-------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| Description       | Only include videos uploaded by the given Dailymotion users.                                                                                                                                                            |
+| Default value     | *empty*                                                                                                                                                                                                                 |
+| Valid values      | A comma-separated list of any of the following:<ul><li>Exact user IDs (e.g. `IGN`)</li><li>User URLs on Dailymotion (e.g. `http://www.dailymotion.com/ign` or `http://www.dailymotion.com/user/splashnews/1`)</li></ul> |
+| Dailymotion docs  | [Click here](https://developer.dailymotion.com/api#video-filters)                                                                                                                                                       |
+| Example shortcode | `[tubepress dailymotionOnlyOwners="user1, user2, user3"]`                                                                                                                                                               |
+
+#### `dailymotionPartnerFilter`
+
+||
+|-------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| Description       | Only include videos with the given partner status.                                                                                                                        |
+| Default value     | `all`                                                                                                                                                                     |
+| Valid values      | <ul><li>`all` Include all videos</li><li>`onlyPartner` Only include partner videos</li><li>`onlyUserGenerated` Only include non-partner (user-generated) videos</li></ul> |
+| Dailymotion docs  | [Click here](https://developer.dailymotion.com/api#video-filters)                                                                                                         |
+| Example shortcode | `[tubepress dailymotionPartnerFilter="onlyUserGenerated"]`                                                                                                                |
+
+#### `dailymotionPremiumFilter`
+
+||
+|-------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| Description       | Only include videos with the given free/paid status.                                                                                                                |
+| Default value     | `all`                                                                                                                                                               |
+| Valid values      | <ul><li>`all` Include all videos</li><li>`onlyPremium` Only include premium (paid) videos</li><li>`onlyNonPremium` Only include non-premium (free) videos</li></ul> |
+| Dailymotion docs  | [Click here](https://developer.dailymotion.com/api#video-filters)                                                                                                   |
+| Example shortcode | `[tubepress dailymotionPremiumFilter="onlyNonPremium"]`                                                                                                             |
+
+### YouTube
+The options below apply only to YouTube.
+
+#### `embeddableOnly`
+
+||
+|-------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| Description       | Some videos have embedding disabled. Enabling this option will exclude these videos from your galleries. Most users will never need to modify this option. |
+| Default value     | `true`                                                                                                                                                     |
+| Valid values      | `true` or `false`                                                                                                                                          |
+| YouTube docs      | [Click here](https://developers.google.com/youtube/v3/docs/videos/list)                                                                                    |
+| Example shortcode | `[tubepress embeddableOnly="true"]`                                                                                                                        |
+
+#### `filter_racy`
+
+||
+|-------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| Description       | Filter out restricted content.                                                                                                                                                           |
+| Default value     | `moderate`                                                                                                                                                                               |
+| Valid values      | <ul><li>`none` YouTube will not perform any filtering.</li><li>`moderate` YouTube will filter some videos.</li><li>`strict` YouTube will try to exclude all restricted videos.</li></ul> |
+| YouTube docs      | [Click here](https://developers.google.com/youtube/v3/docs/search/list)                                                                                                                  |
+| Example shortcode | `[tubepress filter_racy="strict"]`                                                                                                                                                       |
+
+#### `googleApiKey`
+
+||
+|-------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| Description       | Your Google API key. YouTube will use this for logging and quota purposes.                                                                                                                                                                                   |
+| Default value     | *empty*                                                                                                                                                                                                                                                      |
+| Valid values      | Any valid Google API key. WordPress users can follow [these instructions](/docs/page/youtube-api-setup-for-wordpress) to obtain a new key. You may use a single key on multiple websites. |
+| YouTube docs      | [Click here](https://developers.google.com/youtube/registering_an_application)                                                                                                                                                                               |
+| Example shortcode | `[tubepress googleApiKey="xxxx"]`   
+
+## Video Player
+
+This section lists all of the TubePress options that apply to the embedded video player.
+
+### Global
+
+The options below apply to all video providers (YouTube, Vimeo, Dailymotion, etc.).
+
+#### `autoNext`
+
+||
+|-------------------|------------------------------------------------------------------------------------|
+| Description       | Automatically start the next video in a gallery when playback of a video finishes. |
+| Default value     | `false`                                                                            |
+| Valid values      | `true` or `false`                                                                  |
+| Example shortcode | `[tubepress autoNext="true"]`                                                      |
+
+#### `autoplay`
+
+||
+|-------------------|-----------------------------------------------------------------------------------|
+| Description       | Automatically start video playback of any embedded video when the page is loaded. |
+| Default value     | `false`                                                                           |
+| Valid values      | `true` or `false`                                                                 |
+| Example shortcode | `[tubepress autoplay="true"]`                                                     |
+
+#### `embeddedHeight`
+
+||
+|-------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| Description       | The height, in pixels, of the embedded video player that TubePress builds. If you are using responsive embeds, this will help dictate the aspect ratio of the video player. |
+| Default value     | `390`                                                                                                                                                                       |
+| Valid values      | Any positive integer                                                                                                                                                        |
+| Example shortcode | `[tubepress embeddedHeight="350"]`                                                                                                                                          |
+
+#### `embeddedScrollDuration`
+
+||
+|-------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| Description       | For [`playerLocation`](#player-location) values that involve a scroll, this value defines the duration, in milliseconds, of how long the scroll should last. Set to `0` for an instant scroll. |
+| Default value     | `0`                                                                                                                                                                      |
+| Valid values      | Any non-negative integer                                                                                                                                                 |
+| Example shortcode | `[tubepress embeddedScrollDuration="100"]`                                                                                                                               |
+
+#### `embeddedScrollOffset`
+
+||
+|-------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| Description       | For [`playerLocation`](#player-location) values that involve a scroll, this value defines the offset, in pixels, from the top of the video player to where the browser window will scroll. Set to `0` to scroll to the exact top of the video player. Negative values will scroll to above the player, and positive values will scroll to below the player. |
+| Default value     | `0`                                                                                                                                                                                                                                                                                                                                     |
+| Valid values      | Any integer                                                                                                                                                                                                                                                                                                                             |
+| Example shortcode | `[tubepress embeddedScrollOffset="30"]`                                                                                                                                                                                                                                                                                                 |
+
+#### `embeddedScrollOn`
+
+||
+|-------------------|----------------------------------------------------------------------------------------------------------------------|
+| Description       | For [`playerLocation`](#player-location) values that involve a scroll, this will either enable or disable the automated scroll behavior. |
+| Default value     | `true`                                                                                                               |
+| Valid values      | `true` or `false`                                                                                                    |
+| Example shortcode | `[tubepress embeddedScrollOn="false"]`                                                                               |
+
+#### `embeddedWidth`
+
+||
+|-------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| Description       | The width, in pixels, of the embedded video player that TubePress builds. If you are using responsive embeds, this will help dictate the aspect ratio of the video player. |
+| Default value     | `640`                                                                                                                                                                      |
+| Valid values      | Any positive integer                                                                                                                                                       |
+| Example shortcode | `[tubepress embeddedWidth="600"]`                                                                                                                                          |
+
+#### `lazyPlay`
+
+||
+|-------------------|-----------------------------------------------------------------------------------|
+| Description       | If enabled, video playback will auto-start after user clicks a video's thumbnail. |
+| Default value     | `true`                                                                            |
+| Valid values      | `true` or `false`                                                                 |
+| Example shortcode | `[tubepress lazyPlay="true"]`                                                     |
+
+#### `loop`
+
+||
+|-------------------|---------------------------------------------------------------------------|
+| Description       | If enabled, immediately restart playback of each video after it finishes. |
+| Default value     | `false`                                                                   |
+| Valid values      | `true` or `false`                                                         |
+| Example shortcode | `[tubepress loop="true"]`                                                 |
+
+#### `playerImplementation`
+
+||
+|-------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| Description       | Defines the "brand" of the embedded video player.                                                                                                                                                                                        |
+| Default value     | `provider_based`                                                                                                                                                                                                                         |
+| Valid values      | <ul><li>`provider_based` Uses the provider’s player (e.g. the standard YouTube/Vimeo player)</li><li>`embedplus` Plays videos with [EmbedPlus](http://www.embedplus.com/)</li><li>`longtail` Plays videos with [JW Player 5](http://www.jwplayer.com/)</li></ul> |
+| Example shortcode | `[tubepress playerImplementation="longtail"]`                                                                                                                                                                                            |
+
+#### `playerLocation`
+
+||
+|-------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| Description       | Defines the "location" of the embedded video player. This allows you to choose the location and effect of how the embedded videos play.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       |
+| Default value     | `normal`                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      |
+| Valid values      | <ul><li>`normal` Embedded player is placed inline above the thumbnail array</li><li>`popup` Videos play in an HTML popup window</li><li>`youtube` User is taken to the video’s home on youtube.com for viewing</li><li>`vimeo` User is taken to the video’s home on vimeo.com for viewing</li><li>`shadowbox` Video plays in a modal window with Shadowbox.js</li><li>`jqmodal` Video plays in a modal window with [jqModal](http://dev.iceburg.net/jquery/jqModal/)</li><li>`solo` Page refreshes, and video player replaces the entire thumbnail gallery</li><li>`static` Like `normal`, but each thumbnail click triggers a page refresh</li><li>`tinybox` Video plays in a modal window with [TinyBox](http://www.scriptiny.com/2009/05/javascript-popup-box/)</li><li>`fancybox` Video plays in a modal window with [Fancybox](http://fancybox.net/)</li></ul> |
+| Example shortcode | `[tubepress playerLocation="popup"]`                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          |
+
+#### `responsiveEmbeds`
+
+||
+|-------------------|-------------------------------------------------------------------------------|
+| Description       | Enable or disable the resizing of the video player to best fit its container. |
+| Default value     | `true`                                                                        |
+| Valid values      | `true` or `false`                                                             |
+| Example shortcode | `[tubepress responsiveEmbeds="false"]`                                        |
+
+#### `showInfo`
+
+||
+|-------------------|------------------------------------------------------------------------------------------------------------------------------|
+| Description       | Show or hide the video's title, description, and other meta information on the embedded video itself before playback begins. |
+| Default value     | `false`                                                                                                                      |
+| Valid values      | `true` or `false`                                                                                                            |
+| Example shortcode | `[tubepress showInfo="true"]`                                                                                                |
+
+### YouTube
+
+The options below apply only to YouTube.
+
+#### `autoHide`
+
+||
+|-------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| Description       | Automatically fade out elements of the video player after a few moments of playback.                                                                                                                                       |
+| Default value     | `fadeOnlyProgressBar`                                                                                                                                                                                                      |
+| Valid values      | <ul><li>`fadeBoth` Fade both the progress bar and the video controls</li><li>`fadeNone` Always show both the progress bar and the video controls</li><li>`fadeOnlyProgressBar` Fade only the progress bar, but continue to show the video controls</li></ul> |
+| YouTube docs      | [Click here](https://developers.google.com/youtube/player_parameters)                                                                                                                                                      |
+| Example shortcode | `[tubepress autoHide="fadeNone"]`                                                                                                                                                                                          |
+| Note              | Only applies to YouTube                                               |
+
+#### `fullscreen`
+
+||
+|-------------------|-----------------------------------------------------------------------|
+| Description       | Enable or disable fullscreen playback capability.                     |
+| Default value     | `true`                                                                |
+| Valid values      | `true` or `false`                                                     |
+| YouTube docs      | [Click here](https://developers.google.com/youtube/player_parameters) |
+| Example shortcode | `[tubepress fullscreen="false"]`                                      |
+| Note              | Only applies to YouTube                                               |
+
+#### `modestBranding`
+
+||
+|-------------------|-----------------------------------------------------------------------|
+| Description       | If enabled, hides the YouTube logo from the video controls area.      |
+| Default value     | `true`                                                                |
+| Valid values      | `true` or `false`                                                     |
+| YouTube docs      | [Click here](https://developers.google.com/youtube/player_parameters) |
+| Example shortcode | `[tubepress modestBranding="false"]`                                  |
+| Note              | Only applies to YouTube                                               |
+
+#### `showRelated`
+
+||
+|-------------------|-----------------------------------------------------------------------|
+| Description       | Toggles display of related videos when playback finishes.             |
+| Default value     | `true`                                                                |
+| Valid values      | `true` or `false`                                                     |
+| YouTube docs      | [Click here](https://developers.google.com/youtube/player_parameters) |
+| Example shortcode | `[tubepress showRelated="false"]`                                     |
+| Note              | Only applies to YouTube                                               |
+
+#### `youtubeClosedCaptions`
+
+||
+|-------------------|-----------------------------------------------------------------------|
+| Description       | Show closed captions by default.                                      |
+| Default value     | `false`                                                               |
+| Valid values      | `true` or `false`                                                     |
+| YouTube docs      | [Click here](https://developers.google.com/youtube/player_parameters) |
+| Example shortcode | `[tubepress youtubeClosedCaptions="true"]`                            |
+| Note              | Only applies to YouTube                                               |
+
+#### `youtubeDisableKeyboardControls`
+
+||
+|-------------------|-------------------------------------------------------------------------|
+| Description       | Disable all keyboard controls for the video.                            |
+| Default value     | `false`                                                                 |
+| Valid values      | `true` or `false`                                                       |
+| YouTube docs      | [Click here](https://developers.google.com/youtube/player_parameters)   |
+| Example shortcode | `[tubepress youtubeDisableKeyboardControls="true"]`                     |
+| Note              | Only applies to YouTube                                                 |
+
+#### `youtubePlayerTheme`
+
+||
+|-------------------|-----------------------------------------------------------------------|
+| Description       | The color theme of the video player.                                  |
+| Default value     | `dark`                                                                |
+| Valid values      | `dark` or `light`                                                     |
+| YouTube docs      | [Click here](https://developers.google.com/youtube/player_parameters) |
+| Example shortcode | `[tubepress youtubePlayerTheme="light"]`                              |
+| Note              | Only applies to YouTube                                               |
+
+#### `youtubeShowAnnotations`
+
+||
+|-------------------|-----------------------------------------------------------------------|
+| Description       | Show video annotations by default.                                    |
+| Default value     | `false`                                                               |
+| Valid values      | `true` or `false`                                                     |
+| YouTube docs      | [Click here](https://developers.google.com/youtube/player_parameters) |
+| Example shortcode | `[tubepress youtubeShowAnnotations="true"]`                           |
+| Note              | Only applies to YouTube                                               |
+
+## Meta display
+
+This section lists TubePress options that apply to the video metadata (title, runtime, description, etc.) that show up with each video.
+
+### Meta Display Toggles
+
+The options in the two tables below turn on or off the display of various bits of metadata for each video. Each option accepts `true` or `false`.
+
+  * Example shortcode 
+ 
+  `[tubepress description="true" views="false"]`
+  
+#### **Global Toggles**
+
+The options in the table below apply to all video providers (Dailymotion, YouTube, etc.).
+
+| Option name   | Toggles display of each video's... |
+|---------------|-------------------------------------|
+| `author`      | author (uploader) display name      |
+| `category`    | category                            |
+| `description` | description                         |
+| `id`          | ID                                  |
+| `length`      | duration/runtime                    |
+| `tags`        | tags/keywords                       |
+| `title`       | title                               |
+| `uploaded`    | date published                      |
+| `url`         | original URL                        |
+| `views`       | views count                         |
+
+#### **YouTube Toggles**
+
+The options in the table below apply to YouTube.
+
+| Option name          | Toggles display of each video's ...  |
+|----------------------|--------------------------------------|
+| `likes`              | number of likes                      |
+| `showCountComments`  | number of comments                   |
+| `showCountDislikes`  | number of dislikes                   |
+| `showCountFavorites` | number of times marked as a favorite |
+
+### Miscellaneous Meta Display Options
+
+| Option name       | `dateFormat`                                                                                                 |
+|-------------------|--------------------------------------------------------------------------------------------------------------|
+| Description       | Set the textual formatting of date information for videos. See [`date()`](http://php.net/date) for examples. |
+| Default value     | `M j, Y`                                                                                                     |
+| Valid values      | Any format accepted by PHP's [`date()`](http://php.net/date) function                                        |
+| Example shortcode | `[tubepress dateFormat="trl jS \of F Y h:i:s Aue"]`                                                          |
+
+| Option name       | `descriptionLimit`                                                                                                                                                      |
+|-------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| Description       | The maximum number of characters of a video's description that should be displayed. Descriptions over this limit will be truncated with `...`. Set to `0` for no limit. |
+| Default value     | `0`                                                                                                                                                                     |
+| Valid values      | Any non-negative integer.                                                                                                                                               |
+| Example shortcode | `[tubepress descriptionLimit="20"]`                                                                                                                                     |
+
+| Option name       | `relativeDates`                                                                                                                |
+|-------------------|--------------------------------------------------------------------------------------------------------------------------------|
+| Description       | Toggle display of relative dates, such as "last year" instead of "Nov 3, 1980". Currently only available in English (for now). |
+| Default value     | `false`                                                                                                                        |
+| Valid values      | `true` or `false`                                                                                                              |
+| Example shortcode | `[tubepress relativeDates="true"]`          
+
+## Interactive search
+
+This section lists all of the TubePress options that apply to [interactive search](/docs/page/interactive-searching).
+
+#### `searchProvider`
+
+||
+|-------------------|----------------------------------------------------------------------------------------------------|
+| Description       | The name of a video provider (e.g. YouTube or Vimeo) which should be searched for matching videos. |
+| Default value     | *empty*                                                                                            |
+| Valid values      | `dailymotion`, `youtube`, or `vimeo`                                                               |
+| Example shortcode | `[tubepress searchProvider="vimeo"]`                                                               |
+
+#### `searchResultsDomId`
+
+||
+|-------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| Description       | Used with `output="ajaxSearchInput"`, this option defines a [jQuery selector](https://api.jquery.com/category/selectors/) for which TubePress should place the search results. |
+| Default value     | *empty*                                                                                                                                                                        |
+| Valid values      | Any [jQuery selector](https://api.jquery.com/category/selectors/) which identifies exactly one element on the page that can accept HTML.                                       |
+| Example shortcode | `[tubepress searchResultsDomId="#foobar"]`                                                                                                                                     |
+
+#### `searchResultsOnly`
+
+||
+|-------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| Description       | If set to `true`, TubePress will output search results only after the user has submitted search terms. It will be "invisible" if the user has not submitted search terms. |
+| Default value     | `false`                                                                                                                                                                   |
+| Valid values      | `true` or `false`                                                                                                                                                         |
+| Example shortcode | `[tubepress searchResultsOnly="true"]`                                                                                                                                    |
+
+#### `searchResultsUrl`
+
+||
+|-------------------|-----------------------------------------------------------------------------------|
+| Description       | A URL defining where TubePress should send the user's search terms.               |
+| Default value     | `$_SERVER[PHP_SELF]` (i.e. the same page)                                         |
+| Valid values      | Any absolute URL where TubePress is loaded.                                       |
+| Example shortcode | `[tubepress searchResultsUrl="http://mysite.com/search.php"]`                     |
+
+## Cache
+
+This section lists all of the TubePress options that apply to server-side caching.
+
+### API Cache
+
+#### `cacheCleaningFactor`
+
+||
+|-------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| Description       | Defines how often TubePress will perform a full flush of its API cache. If you enter `x`, the API cache will be flushed every 1/`x` cache writes. Enter `0` to disable all cache flushing. |
+| Default value     | `20`                                                                                                                                                                                       |
+| Valid values      | Any non-negative integer                                                                                                                                                                   |
+| Example shortcode | `[tubepress cacheCleaningFactor="0"]`                                                                                                                                                      |
+
+#### `cacheDirectory`
+
+||
+|-------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| Description       | The absolute filesystem path of a directory on your web server where TubePress can store the API cache contents. This directory must be writable by the PHP process owner. If this option is left empty, TubePress will attempt to find and use the system temporary directory. |
+| Default value     |  *empty*                                                                                                                                                                                                                                                                        |
+| Valid values      | An absolute filesystem path of a writeable (by the PHP process owner) directory on the web server, or empty.                                                                                                                                                                    |
+| Example shortcode | `[tubepress cacheDirectory="/tmp/tubepress-cache"]`                                                                                                                                                                                                                             |
+
+#### `cacheEnabled`
+
+||
+|-------------------|------------------------------------------------------------------------------------------------------------------|
+| Description       | Enables or disables the TubePress API cache. You should always leave the cache enabled unless you are debugging. |
+| Default value     | `true`                                                                                                           |
+| Valid values      | `true` or `false`                                                                                                |
+| Example shortcode | `[tubepress cacheEnabled="false"]`                                                                               |
+
+| Option name <a id="cache-lifetime-seconds"></a>      | `cacheLifetimeSeconds`                                                                     |
+|-------------------|--------------------------------------------------------------------------------------------|
+| Description       | How long, in seconds, before an item in the TubePress API cache is considered to be stale. |
+| Default value     | `21600` (six hours)                                                                        |
+| Valid values      | Any positive integer                                                                       |
+| Example shortcode | `[tubepress cacheLifetimeSeconds="300"]`                                                   |
+
+### HTML Cache
+
+#### `htmlCacheCleaningFactor`
+
+||
+|-------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| Description       | Defines how often TubePress will perform a full flush of its HTML cache. If you enter `x`, the HTML cache will be flushed every 1/`x` cache writes. Enter `0` to disable all cache flushing. |
+| Default value     | `100`                                                                                                                                                                                        |
+| Valid values      | Any non-negative integer                                                                                                                                                                     |
+| Example shortcode | `[tubepress htmlCacheCleaningFactor="300"]`                                                                                                                                                  |
+
+#### `htmlCacheCleaningKey`
+
+||
+|-------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| Description       | The name of the HTTP request parameter that, when set to `true`, can remotely flush the cache. For instance, if you enter `foobar`, then adding `?foobar=true` to the end of a URL would remotely trigger a clear of the HTML cache. |
+| Default value     | `tubepress_clear_html_cache`                                                                                                                                                                                                         |
+| Valid values      | Any string of word characters (alphanumerics, underscores, and hyphens)                                                                                                                                                              |
+| Example shortcode | `[tubepress htmlCacheCleaningKey="somekey"]`                                                                                                                                                                                         |
+
+#### `htmlCacheDirectory`
+
+||
+|-------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| Description       | The absolute filesystem path of a directory on your web server where TubePress can store the HTML cache contents. This directory must be writable by the PHP process owner. If this option is left empty, TubePress will attempt to find and use the system temporary directory. |
+| Default value     | *empty*                                                                                                                                                                                                                                                                          |
+| Valid values      | An absolute filesystem path of a writeable (by the PHP process owner) directory on the web server, or empty.                                                                                                                                                                     |
+| Example shortcode | `[tubepress htmlCacheDirectory="/tmp/tubepress-cache"]`                                                                                                                                                                                                                          |
+#### `htmlCacheEnabled`
+
+||
+|-------------------|-------------------------------------------------------------------------------------------------------------------|
+| Description       | Enables or disables the TubePress HTML cache. You should always leave the cache enabled unless you are debugging. |
+| Default value     | `true`                                                                                                            |
+| Valid values      | `true` or `false`                                                                                                 |
+| Example shortcode | `[tubepress htmlCacheEnabled="false"]`                                                                            |
+
+#### `htmlCacheLifetimeSeconds`
+
+||
+|-------------------|---------------------------------------------------------------------------------------------|
+| Description       | How long, in seconds, before an item in the TubePress HTML cache is considered to be stale. |
+| Default value     | `21600` (six hours)                                                                         |
+| Valid values      | Any positive integer                                                                        |
+| Example shortcode | `[tubepress htmlCacheLifetimeSeconds="300"]`                                                |
+
+## Single-video embedding
+
+This section lists the options relevant to single video embedding with TubePress.
+
+#### `video`
+
+||
+|-------------------|------------------------------------------------------------------------------------------------------------------------------------------|
+| Description       | Causes TubePress to generate HTML for a single video embed. The video to be displayed is defined by the value you supply to this option. |
+| Default value     | *empty*                                                                                                                                  |
+| Valid values      | Any video ID (YouTube, Dailymotion, etc.) that TubePress knows how to handle.                                                            |
+| Example shortcode | `[tubepress video="lJtHNEDnrnY"]`                                                                                                        |
+
+## Advanced
+
+This page lists all of the TubePress options that many users will not need to adjust.
+
+#### `debugging_enabled`
+
+||
+|-------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| Description       | Enables or disables TubePress debugging. Keeping this enabled is a slight privacy risk, so if you are not experiencing difficulty with TubePress then feel free to disable it. |
+| Default value     | `true`                                                                                                                                                                         |
+| Valid values      | `true` or `false`                                                                                                                                                              |
+| Example shortcode | `[tubepress debugging_enabled="false"]`                                                                                                                                        |
+
+#### `galleryId`
+
+||
+|-------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| Description       | Explicitly set the unique identifier of this HTML element. By default, TubePress will assign a large random number to each bit of HTML that it produces. This allows TubePress to differentiate and coordinate between multiple elements on the same page. By setting this option, you can choose a constant ID so that you can refer to the element via JavaScript. |
+| Default value     | *empty*                                                                                                                                                                                                                                                                                                                                                              |
+| Valid values      | Any string, though a large positive integer is recommended.                                                                                                                                                                                                                                                                                                          |
+| Example shortcode | `[tubepress galleryId="123456"]`                                                                                                                                                                                                                                                                                                                                     |
+
+#### `httpMethod`
+
+||
+|-------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| Description       | Defines the HTTP method to use for most Ajax operations that TubePress performs. This can be useful to change when TubePress is used in web servers with tight security requirements. |
+| Default value     | `GET`                                                                                                                                                                                 |
+| Valid values      | `GET` or `POST` (case sensitive)                                                                                                                                                      |
+| Example shortcode | `[tubepress httpMethod="POST"]`                                                                                                                                                       |
+
+#### `https`
+
+||
+|-------------------|---------------------------------------------------------------------------------------------------------------------------------------------|
+| Description       | Serve thumbnails and embedded video player over a secure connection. This is useful if you are running TubePress inside an HTTPS-only site. |
+| Default value     | `false`                                                                                                                                     |
+| Valid values      | `true` or `false`                                                                                                                           |
+| Example shortcode | `[tubepress https="true"]`                                                                                                                  |
+
+#### `output`
+
+||
+|-------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| Description       | Defines what HTML TubePress will generate (e.g. a video gallery, a single video embed, interactive search widgets, etc.). Unless explicitly defined, TubePress will generate a video gallery.                                                                                                                                          |
+| Default value     | *empty*                                                                                                                                                                                                                                                                                                                                |
+| Valid values      | <ul><li>`searchInput` User input (text field and search button) for interactive searching</li><li>`searchOutput` Search results from interactive searching</li><li>`player` A single embedded video (player only)</li><li>`ajaxSearchInput` User input (text field and search button) for asynchronous interactive searching</li></ul> |
+| Example shortcode | `[tubepress output="ajaxSearchInput"]`                                                                                                                                                                                                                                                                      

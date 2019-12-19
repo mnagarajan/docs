@@ -1,0 +1,60 @@
+---
+title: Internals
+description: "Notes regarding TubePress Pro's implementation"
+---
+
+import QueryParamAddingTextField from 'gatsby-theme-tubepress/src/components/query-param-adding-text-field.js';
+
+## Debug mode
+
+TubePress can be put into "debug mode" which prints out details of what's happening under the hood. To activate debug mode, simply add `tubepress_debug=true` to the end of the URL in your address bar. Feel free to use our tool below to find your debug URL.
+
+<QueryParamAddingTextField queryParamName="tubepress_debug" action="view debugging info" />
+
+### Enabling or Disabling Debug Mode
+
+Keeping debug mode enabled incurs a negligible performance penalty, though it does present a minor privacy risk as some of your web server's internals can be exposed to the world. If you are not having any issues with TubePress, we recommend that you disable debugging.
+
+WordPress users can enable or disable debugging from `WP Admin &gt; Settings &gt; TubePress &gt; Advanced &gt; Enable debugging`
+
+Standalone PHP users can enable or disable debugging via the `debugging_enabled` option. This can either be passed as an option to `TubePressPro::getHTML()`, or it can be saved in `database.json`.
+
+## Content directory
+
+The "TubePress Content Directory" is a special directory located alongside your TubePress installation. The purpose of this directory is to store any customizations (add-ons, themes, or low-level configuration) that you make to TubePress. Since it does not change between TubePress versions, it's "upgrade safe."
+
+### Location
+
+For WordPress users, the TubePress Content Directory is **always** located at `wp-content/tubepress-content`. In most cases, TubePress auto-creates this directory when you activate TubePress for the first time. 
+ 
+### Contents
+
+The TubePress Content Directory *may* contain zero or more of the following immediate subdirectories:
+
+  * `themes` which may contain [themes](themes link) that aren't shipped with TubePress 
+ 
+  * `add-ons` which may contain add-ons that aren't shipped with TubePress 
+ 
+  * `config` which may contain low-level configuration for TubePress such as `settings.php` and/or `database.json`
+
+## System Cache
+
+TubePress is a fairly complex piece of software with many interconnected internal systems. When it is first installed to your web server, it "looks around" to discover what's available to it and how it should configure itself for your particular environment. This usually takes a few hundred milliseconds on most servers. On the web, that's a very long time and your users will feel the delay. So to keep your site running as fast as possible, TubePress performs this initial setup once and caches its findings on your web server's filesystem. On the next request, TubePress quickly reads its cached findings. This usually takes anywhere from 5 milliseconds to a few dozen milliseconds: dramatically faster and virtually negligible for most websites.
+
+### When to Clear the System Cache
+
+There are a few relatively rare instances when the system cache needs to be manually cleared:
+
+  * Adding or removing a TubePress add-on 
+ 
+  * Adding, editing, or removing a [theme's template](/docs/page/templates) 
+ 
+  * Making any changes to a [theme's manifest](/docs/page/theme-manifest-file) 
+ 
+**Other than the events listed above, there is no reason to clear the system cache.**
+
+### How to Clear the System Cache
+
+Clearing the cache is very easy. Simply add `tubepress_clear_system_cache=true` to the end of the URL in your address bar. TubePress will delete the entire system cache and immediately rebuild it. Feel free to use our tool below to calculate this URL for you.
+
+<QueryParamAddingTextField queryParamName="tubepress_clear_system_cache" action="clear the system cache" />
