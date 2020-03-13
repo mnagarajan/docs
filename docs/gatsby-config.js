@@ -1,4 +1,7 @@
-const { merge, concatArrays } = require('merge-anything'),
+const {
+    merge,
+    concatArrays,
+  } = require('merge-anything'),
 
   introNav = { null: [
     'user-guides',
@@ -48,7 +51,7 @@ const { merge, concatArrays } = require('merge-anything'),
  */
 
 module.exports = {
-  pathPrefix: '/docs',
+  pathPrefix: process.env.NODE_ENV === 'production' ? '/docs' : '',
   plugins: [
     {
       resolve: 'gatsby-theme-tubepress',

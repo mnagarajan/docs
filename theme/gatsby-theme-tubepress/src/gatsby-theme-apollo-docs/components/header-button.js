@@ -1,8 +1,10 @@
 import React from 'react';
 import styled from '@emotion/styled';
+/* BEGIN TUBEPRESS MODIFY */
 import { IconLogin } from '@apollo/space-kit/icons/IconLogin';
-import { breakpoints } from 'gatsby-theme-apollo-core';
-import { colors } from '@apollo/space-kit/colors';
+/* END TUBEPRESS MODIFY */
+import {breakpoints} from 'gatsby-theme-apollo-core';
+import {colors} from '@apollo/space-kit/colors';
 
 const Container = styled.div({
   display: 'flex',
@@ -28,18 +30,21 @@ const StyledLink = styled.a({
   }
 });
 
+/* BEGIN TUBEPRESS MODIFY */
 const StyledIcon = styled(IconLogin)({
+/* END TUBEPRESS MODIFY */
   height: '0.75em',
   marginLeft: '0.5em'
 });
 
-
-export default function HeaderButton () {
+export default function HeaderButton() {
   return (
     <Container>
       <StyledLink
+        /* BEGIN TUBEPRESS MODIFY */
         href="https://tubepress.com/"
         target="_blank"
+        /* END TUBEPRESS MODIFY */
       >
         tubepress.com
         <StyledIcon weight="thin" />

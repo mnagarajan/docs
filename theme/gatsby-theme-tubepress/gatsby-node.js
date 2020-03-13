@@ -40,6 +40,7 @@ exports.onCreatePage = ({
 
   actions.deletePage(page);
 
+  /* take the first segment of the node's relative path. this will be "pro" or "wix" or something similar */
   const split  = node.relativePath.split('/'),
     slashCount = split.length - 1,
     guide      = slashCount > 0 ? split[0] : null,

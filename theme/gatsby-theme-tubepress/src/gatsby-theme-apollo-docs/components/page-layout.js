@@ -22,7 +22,7 @@ import {
 import {Helmet} from 'react-helmet';
 import {IconLayoutModule} from '@apollo/space-kit/icons/IconLayoutModule';
 import {Link, graphql, navigate, useStaticQuery} from 'gatsby';
-import {ReactComponent as Logo} from '@apollo/space-kit/logos/mark.svg';
+import {MobileLogo} from 'gatsby-theme-apollo-docs/src/components/mobile-logo';
 import {Select} from 'gatsby-theme-apollo-docs/src/components/select';
 import {SelectedLanguageContext} from 'gatsby-theme-apollo-docs/src/components/multi-code-block';
 import {getSpectrumUrl, getVersionBasePath} from 'gatsby-theme-apollo-docs/src/utils';
@@ -110,13 +110,12 @@ export const NavItemsContext = createContext();
 
 export default function PageLayout(props) {
   const data = useStaticQuery(
-      graphql`
+    graphql`
       {
         site {
           siteMetadata {
             title
             siteName
-            subtitle
           }
         }
       }
@@ -144,8 +143,9 @@ export default function PageLayout(props) {
   }
 
   const {pathname} = props.location;
-  const {siteName, title, subtitle} = data.site.siteMetadata;
+  const {siteName, title} = data.site.siteMetadata;
   const {
+    subtitle,
     sidebarContents,
     versions,
     versionDifference,
@@ -156,7 +156,7 @@ export default function PageLayout(props) {
     spectrumHandle,
     twitterHandle,
     youtubeUrl,
-    navConfig,
+    navConfig = {},
     footerNavConfig,
     logoLink,
     algoliaApiKey,
@@ -173,7 +173,13 @@ export default function PageLayout(props) {
       [navConfig]
   );
 
+  const hasNavItems = navItems.length > 0;
+  const sidebarTitle = (
+      <span className="title-sidebar">{subtitle || siteName}</span>
+  );
+
   {/* BEGIN TUBEPRESS MODIFY */}
+  {/* navConfig contains the config for the docset switcher */}
   let guideName, guidesArray = [];
   for (guideName in navConfig) {
     if (Object.prototype.hasOwnProperty.call(navConfig, guideName)) {
@@ -223,6 +229,7 @@ export default function PageLayout(props) {
               logoLink={logoLink}
           >
             <HeaderInner>
+            {hasNavItems ? (
               <ButtonWrapper ref={buttonRef}>
                 <StyledButton
                     feel="flat"
@@ -237,6 +244,9 @@ export default function PageLayout(props) {
                   <StyledIcon />
                 </StyledButton>
               </ButtonWrapper>
+            ) : (
+              sidebarTitle
+            )}
               {versions && versions.length > 0 && (
                   <Select
                       feel="flat"
@@ -284,13 +294,15 @@ export default function PageLayout(props) {
             >
               <MobileNav>
                 <MenuButton onClick={openSidebar} />
-                <Logo width={32} fill="currentColor" />
+              <MobileLogo width={32} fill="currentColor" />
               </MobileNav>
+            {algoliaApiKey && algoliaIndexName && (
               <Search
                   siteName={siteName}
                   apiKey={algoliaApiKey}
                   indexName={algoliaIndexName}
               />
+            )}
               <HeaderButton />
             </Header>
             <SelectedLanguageContext.Provider value={selectedLanguageState}>
@@ -300,6 +312,7 @@ export default function PageLayout(props) {
             </SelectedLanguageContext.Provider>
           </Main>
         </FlexWrapper>
+      {hasNavItems && (
         <DocsetSwitcher
             siteName={menuTitle || siteName}
             spectrumUrl={spectrumHandle && getSpectrumUrl(spectrumHandle)}
@@ -311,6 +324,7 @@ export default function PageLayout(props) {
             buttonRef={buttonRef}
             onClose={closeMenu}
         />
+      )}
       </Layout>
   );
 }

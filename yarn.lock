@@ -6442,6 +6442,14 @@ gatsby-remark-check-links@^2.1.0:
   dependencies:
     unist-util-visit "^1.4.1"
 
+gatsby-remark-code-titles@^1.1.0:
+  version "1.1.0"
+  resolved "https://registry.yarnpkg.com/gatsby-remark-code-titles/-/gatsby-remark-code-titles-1.1.0.tgz#1b7246e4ac78669c1ca7c18ea70c3dd11fede139"
+  integrity sha512-RuNqziXi99eBIj5NJP0TgdzAxzWFL+ArGRb3961Ff9Tto/nCvmyqR1qySaWKXtkOgeqoVUlqAFNUCyEAyNuc8w==
+  dependencies:
+    query-string "~6.0.0"
+    unist-util-visit "~1.3.0"
+
 gatsby-remark-copy-linked-files@^2.0.12:
   version "2.1.33"
   resolved "https://registry.yarnpkg.com/gatsby-remark-copy-linked-files/-/gatsby-remark-copy-linked-files-2.1.33.tgz#2c2cc75b85550350c4fd3dc3d395943eb654b067"
@@ -6482,13 +6490,6 @@ gatsby-remark-mermaid@^1.2.0:
     puppeteer "^1.12.2"
     unist-util-visit "^1.4.0"
 
-gatsby-remark-prismjs-title@^1.0.0:
-  version "1.0.0"
-  resolved "https://registry.yarnpkg.com/gatsby-remark-prismjs-title/-/gatsby-remark-prismjs-title-1.0.0.tgz#6df0be4e75acadc497c7ffffba6589d1abd8a445"
-  integrity sha512-VKAw7LGAbzyDlztUfhOri+jDTjLyOPCJCNgkdt2+61+SP8M9wYzzma8NvVyzHP7J9hx0jcYq8F50XQH5dE42ow==
-  dependencies:
-    unist-util-visit "~1.4.0"
-
 gatsby-remark-prismjs@^3.2.8:
   version "3.3.27"
   resolved "https://registry.yarnpkg.com/gatsby-remark-prismjs/-/gatsby-remark-prismjs-3.3.27.tgz#dbd316c6ad91c48ada9459eee63cf9dfa2f34a7a"
@@ -6504,16 +6505,6 @@ gatsby-remark-rewrite-relative-links@^1.0.7:
   integrity sha512-KScR54EJ8nJuKCFDsFyB/e8BkO96r4O2G16Prz1JdRP6utoBtzjf9BAL60hfC8S4FWc+bpQD7zJIpE33s47naw==
   dependencies:
     unist-util-visit "^2.0.0"
-
-gatsby-remark-typescript@^0.2.1:
-  version "0.2.2"
-  resolved "https://registry.yarnpkg.com/gatsby-remark-typescript/-/gatsby-remark-typescript-0.2.2.tgz#d4d61fcc5fe0e5013bf9353c294c7997045ffc01"
-  integrity sha512-Rz7eNWPXGvreTyn8TM6jEYBVhEycl0pGBMyrtUvuTbwVzFdQDvlz5kyU20PuspBt8xAGcbl8rIUNiFwjmYp+RA==
-  dependencies:
-    "@babel/core" "^7.5.5"
-    "@babel/preset-typescript" "^7.3.3"
-    prettier "^1.18.2"
-    unist-util-visit "^1.4.1"
 
 gatsby-source-filesystem@^2.0.29, gatsby-source-filesystem@^2.1.19:
   version "2.1.42"
@@ -6571,10 +6562,10 @@ gatsby-telemetry@^1.1.44:
     stack-utils "1.0.2"
     uuid "3.3.3"
 
-gatsby-theme-apollo-core@^3.0.3:
-  version "3.0.3"
-  resolved "https://registry.yarnpkg.com/gatsby-theme-apollo-core/-/gatsby-theme-apollo-core-3.0.3.tgz#30934b14077f926c0a16c66a7d2a6b82ca71fc19"
-  integrity sha512-eYd4QQb4TbIawM02qMonPy5zdIuXMhPYN9xevZrcoJMBJgKhzkYpENJVX8OnLCthhrTQ4XZzGH1mg3Kqqrcl8g==
+gatsby-theme-apollo-core@^3.0.10:
+  version "3.0.10"
+  resolved "https://registry.yarnpkg.com/gatsby-theme-apollo-core/-/gatsby-theme-apollo-core-3.0.10.tgz#80ec61d0cba53b8441e74b2e5d0222294c8dc509"
+  integrity sha512-vXh1Yu1H2mdDCtuoc6UVGhXLwxXzN4YmWgnweEW+e1ZQYH1WKYQhMM/XjuUQUxXz0aI34y7IZeL3rvXUiDhh9Q==
   dependencies:
     "@apollo/space-kit" "2.15.0"
     "@emotion/core" "^10.0.7"
@@ -6591,10 +6582,10 @@ gatsby-theme-apollo-core@^3.0.3:
     react-helmet "^5.2.0"
     react-use "^9.11.0"
 
-gatsby-theme-apollo-docs@^3.1:
-  version "3.1.11"
-  resolved "https://registry.yarnpkg.com/gatsby-theme-apollo-docs/-/gatsby-theme-apollo-docs-3.1.11.tgz#ef1a9e54788682499e10dd3f133a8102caed917c"
-  integrity sha512-pHT1/Ba8d9n/Z5o7pNYTlNMCYilvb4u0qOXxYFiEGztPg9h8RgsBW//LPh4S+Kv1fl5nJQZI5WAYRv/wQWgw3g==
+gatsby-theme-apollo-docs@^4.0:
+  version "4.0.14"
+  resolved "https://registry.yarnpkg.com/gatsby-theme-apollo-docs/-/gatsby-theme-apollo-docs-4.0.14.tgz#2cde528645f4c9edd35595da6791313e99fb72db"
+  integrity sha512-hptn26w5o8MOA5iH6NZ00KrWdUzPRXUiCgJzh1J4+ggqCtypGixU5uXJIwR/ka9WRUJtQWz9uaJ47XlPnhTMUw==
   dependencies:
     "@mdx-js/mdx" "^1.1.0"
     "@mdx-js/react" "^1.0.27"
@@ -6603,15 +6594,14 @@ gatsby-theme-apollo-docs@^3.1:
     gatsby-plugin-segment-js "^3.0.1"
     gatsby-remark-autolink-headers "^2.0.16"
     gatsby-remark-check-links "^2.1.0"
+    gatsby-remark-code-titles "^1.1.0"
     gatsby-remark-copy-linked-files "^2.0.12"
     gatsby-remark-mermaid "^1.2.0"
     gatsby-remark-prismjs "^3.2.8"
-    gatsby-remark-prismjs-title "^1.0.0"
     gatsby-remark-rewrite-relative-links "^1.0.7"
-    gatsby-remark-typescript "^0.2.1"
     gatsby-source-filesystem "^2.0.29"
     gatsby-source-git "^1.0.1"
-    gatsby-theme-apollo-core "^3.0.3"
+    gatsby-theme-apollo-core "^3.0.10"
     gatsby-transformer-remark "^2.6.30"
     js-yaml "^3.13.1"
     prismjs "^1.15.0"
@@ -6620,6 +6610,7 @@ gatsby-theme-apollo-docs@^3.1:
     rehype-react "^3.1.0"
     remark "^10.0.1"
     remark-react "^5.0.1"
+    remark-typescript "^0.3.0"
     source-sans-pro "^3.6.0"
     striptags "^3.1.1"
 
@@ -11709,6 +11700,14 @@ query-string@^6.9.0:
     split-on-first "^1.0.0"
     strict-uri-encode "^2.0.0"
 
+query-string@~6.0.0:
+  version "6.0.0"
+  resolved "https://registry.yarnpkg.com/query-string/-/query-string-6.0.0.tgz#8b8f39447b73e8290d6f5e3581779218e9171142"
+  integrity sha1-i485RHtz6CkNb141gXeSGOkXEUI=
+  dependencies:
+    decode-uri-component "^0.2.0"
+    strict-uri-encode "^2.0.0"
+
 querystring-es3@^0.2.0:
   version "0.2.1"
   resolved "https://registry.yarnpkg.com/querystring-es3/-/querystring-es3-0.2.1.tgz#9ec61f79049875707d69414596fd907a4d711e73"
@@ -12317,6 +12316,16 @@ remark-stringify@^6.0.0:
     stringify-entities "^1.0.1"
     unherit "^1.0.4"
     xtend "^4.0.1"
+
+remark-typescript@^0.3.0:
+  version "0.3.1"
+  resolved "https://registry.yarnpkg.com/remark-typescript/-/remark-typescript-0.3.1.tgz#72528d84876a8c0b6af89f9db2a6be816ce387b3"
+  integrity sha512-UH3VrAD6HB3JBrPrdKDHmhSb2frDT0OfDTE4P8MI807KWNHkhuA+dKjld9+mYbq+PViy86nUZstpGkHWp5Y6gA==
+  dependencies:
+    "@babel/core" "^7.5.5"
+    "@babel/preset-typescript" "^7.3.3"
+    prettier "^1.18.2"
+    unist-util-visit "^1.4.1"
 
 remark@^10.0.1:
   version "10.0.1"
@@ -14404,7 +14413,7 @@ unist-util-generated@^1.1.0:
   resolved "https://registry.yarnpkg.com/unist-util-generated/-/unist-util-generated-1.1.5.tgz#1e903e68467931ebfaea386dae9ea253628acd42"
   integrity sha512-1TC+NxQa4N9pNdayCYA1EGUOCAO0Le3fVp7Jzns6lnua/mYgwHo0tz5WUAfrdpNch1RZLHc61VZ1SDgrtNXLSw==
 
-unist-util-is@^2.0.0, unist-util-is@^2.1.2:
+unist-util-is@^2.0.0, unist-util-is@^2.1.1, unist-util-is@^2.1.2:
   version "2.1.3"
   resolved "https://registry.yarnpkg.com/unist-util-is/-/unist-util-is-2.1.3.tgz#459182db31f4742fceaea88d429693cbf0043d20"
   integrity sha512-4WbQX2iwfr/+PfM4U3zd2VNXY+dWtZsN1fLnWEi2QQXA4qyDYAZcDMfXUX0Cu6XZUHHAO9q4nyxxLT4Awk1qUA==
@@ -14502,12 +14511,19 @@ unist-util-visit@2.0.1, unist-util-visit@^2.0.0:
     unist-util-is "^4.0.0"
     unist-util-visit-parents "^3.0.0"
 
-unist-util-visit@^1.0.0, unist-util-visit@^1.1.0, unist-util-visit@^1.3.0, unist-util-visit@^1.4.0, unist-util-visit@^1.4.1, unist-util-visit@~1.4.0:
+unist-util-visit@^1.0.0, unist-util-visit@^1.1.0, unist-util-visit@^1.3.0, unist-util-visit@^1.4.0, unist-util-visit@^1.4.1:
   version "1.4.1"
   resolved "https://registry.yarnpkg.com/unist-util-visit/-/unist-util-visit-1.4.1.tgz#4724aaa8486e6ee6e26d7ff3c8685960d560b1e3"
   integrity sha512-AvGNk7Bb//EmJZyhtRUnNMEpId/AZ5Ph/KUpTI09WHQuDZHKovQ1oEv3mfmKpWKtoMzyMC4GLBm1Zy5k12fjIw==
   dependencies:
     unist-util-visit-parents "^2.0.0"
+
+unist-util-visit@~1.3.0:
+  version "1.3.1"
+  resolved "https://registry.yarnpkg.com/unist-util-visit/-/unist-util-visit-1.3.1.tgz#c019ac9337a62486be58531bc27e7499ae7d55c7"
+  integrity sha512-0fdB9EQJU0tho5tK0VzOJzAQpPv2LyLZ030b10GxuzAWEfvd54mpY7BMjQ1L69k2YNvL+SvxRzH0yUIehOO8aA==
+  dependencies:
+    unist-util-is "^2.1.1"
 
 universalify@^0.1.0:
   version "0.1.2"
