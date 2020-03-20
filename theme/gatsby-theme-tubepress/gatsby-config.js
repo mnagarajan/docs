@@ -53,8 +53,8 @@ module.exports = ({
     finalOpts = {
       resolve: 'gatsby-theme-apollo-docs',
       options: {
-        algoliaApiKey: '768e823959d35bbd51e4b2439be13fb7',
-        algoliaIndexName: 'apollodata',
+        algoliaApiKey: '283d12f5c131c7fbeabd455cb6bf36ae',
+        algoliaIndexName: 'tubepress',
         baseUrl: 'https://tubepress.com',
         contentDir: 'source',
         defaultVersion: 'default',
