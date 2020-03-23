@@ -3,10 +3,15 @@ const {
     concatArrays,
   } = require('merge-anything'),
 
-  introNav = { null: [
-    'user-guides',
-    'get-in-touch',
-  ] },
+  introNav = {
+    null: [
+      'user-guides',
+      'get-in-touch',
+    ],
+    'appendices': [
+      'youtube-api-setup',
+    ],
+  },
 
   proNav = {
     'null': [

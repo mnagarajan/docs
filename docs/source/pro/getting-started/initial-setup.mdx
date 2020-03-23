@@ -3,6 +3,8 @@ title: Initial Setup
 description: 'One-time post-install tasks for TubePress Pro'
 ---
 
+import { Link } from 'gatsby';
+
 You've [downloaded](/docs/page/download) and [installed](/docs/page/installation) TubePress to your website - great! If this is your first time using TubePress, you'll need to perform some initial configuration before you go further. These are one-time jobs that should take just a few minutes.
 
 ## Navigate to the TubePress options page
@@ -19,53 +21,7 @@ Setting up your API credentials is easy, free, and should take less than 5 minut
 
 ## YouTube API Setup
 
-1. You'll need a Google account. If you don't have one, you can [sign up for one for free](https://accounts.google.com/signup).
-
-1. Visit the [Google Developers Console](https://console.developers.google.com/)
-
-1. Once you sign in, select "Create a project..." from the "Select a project" menu near the top of the page.
-
-    ![Create new API project button](../img/initial-setup/api-setup-google/01-create-project-button.png)
-
-1. Enter anything you'd like for the Project name, then click the "Create" button.
-
-    ![Create project form](../img/initial-setup/api-setup-google/02-new-project-dialog.png)
-
-1. After the project is created (it will take a few seconds), you should be on the "Overview" page for your new project. Double-check to make sure that your new project name is visible from the menu at the top of the page. 
-
-    ![Project overview](../img/initial-setup/api-setup-google/03-project-overview.png)
-
-1. Under the "Google APIs" tab, click the link for "YouTube Data API".
-
-    ![YouTube API link](../img/initial-setup/api-setup-google/04-yt-data-api-location.png)
-
-1. Click the "Enable" button.
-
-    ![Enable API button](../img/initial-setup/api-setup-google/05-enable-api-button1.png)
-
-1. After the API is enabled (it will take a few seconds), click the "Credentials" link on the left side of the page.
-
-    ![Credentials link](../img/initial-setup/api-setup-google/06-credentials-link-location.png)
-
-1. Click the blue "Create credentials" button.
-
-    ![Create credentials button](../img/initial-setup/api-setup-google/07-add-credentials-button.png)
-    
-1. In the dropdown that appears, click the link for "API key".
-
-    ![API key link](../img/initial-setup/api-setup-google/08-api-key-link-location.png)
-
-1. Click the "Server key" button. 
-
-    ![Server key button](img/api-setup-google/09-server-key-button.png)
- 
-1. Click the "Create" button. You can fill in the "Name" field if you'd like, but leave the other field empty. 
-
-    ![Create server key button](img/api-setup-google/10-create-server-key.png)
-
-1. Copy your new API key.
-
-    ![Copy API key](../img/initial-setup/api-setup-google/11-copy-new-api-key.png)
+1. Follow <Link to="/youtube-api-setup">these instructions</Link> to obtain a new API key for YouTube.
     
 1. On the TubePress options page, click the "Feed" tab.
 
